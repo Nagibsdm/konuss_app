@@ -70,6 +70,7 @@ def send_order_email(order_id, cart, customer_name, customer_phone, customer_add
         st.success("¡Pedido enviado por correo exitosamente! 🚀")
     except Exception as e:
         st.error(f"❌ Error al enviar el correo: {e}")
+
 st.markdown("""
 <style>
 /* Fondo principal claro */
@@ -82,14 +83,14 @@ st.markdown("""
 
 /* Texto general */
 body, div, p, span, label, h1, h2, h3, h4, h5, h6 {
-    color: #000000 !important; /* Forzar texto negro */
+    color: #000000 !important; /* Texto negro forzado */
     margin: 0; /* Reducir márgenes para mejor ajuste */
 }
 
 /* Estilo para separadores de sección */
 .section-title {
     background-color: #e63946; /* Fondo rojo */
-    color: white; /* Texto blanco */
+    color: white !important; /* Texto blanco */
     font-size: 18px; /* Ajuste de tamaño de fuente para pantallas pequeñas */
     font-weight: bold;
     text-align: center;
@@ -109,6 +110,7 @@ input, textarea {
     font-size: 14px !important; /* Ajuste de fuente */
     width: 100%; /* Asegura que ocupe el ancho completo */
     box-sizing: border-box; /* Previene desbordamiento horizontal */
+    margin-bottom: 10px; /* Espaciado inferior */
 }
 input:focus, textarea:focus {
     outline: none !important;
@@ -119,24 +121,50 @@ input:focus, textarea:focus {
 /* Botones al lado del producto */
 .stButton>button {
     background-color: #e63946; /* Fondo rojo */
-    color: white; /* Texto blanco */
+    color: white !important; /* Texto blanco */
     border-radius: 8px; /* Botón ligeramente redondeado */
     padding: 5px 10px; /* Tamaño ajustado */
     font-size: 12px; /* Fuente más pequeña */
     border: none;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
     margin-left: 10px; /* Espacio entre botón y texto */
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s; /* Efecto visual */
 }
 .stButton>button:hover {
     background-color: #c22834; /* Cambio de color al pasar el mouse */
+    transform: scale(1.05); /* Efecto de zoom */
+    box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.2);
+}
+
+/* Texto sobre fondos verdes */
+div[style*="background-color:#28a745"] * {
+    color: #000000 !important; /* Texto negro en fondo verde */
 }
 
 /* Ocultar header y footer innecesarios */
 header, footer {
     visibility: hidden;
 }
+
+/* Ajustes responsivos */
+@media only screen and (max-width: 768px) {
+    .section-title {
+        font-size: 16px; /* Texto más pequeño para móviles */
+        padding: 6px; /* Espaciado menor */
+    }
+    input, textarea {
+        font-size: 12px; /* Ajustar tamaño de fuente */
+        padding: 6px; /* Reducción del padding */
+    }
+    .stButton>button {
+        font-size: 11px; /* Botones más pequeños */
+        padding: 6px; /* Menos altura */
+    }
+}
 </style>
 """, unsafe_allow_html=True)
+
 
 # Encabezado
 st.markdown("<h1 class='header'>🍕 Konuss -¡Ahora la pizza se come en cono!🎉</h1>", unsafe_allow_html=True)
