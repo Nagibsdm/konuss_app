@@ -75,26 +75,35 @@ def send_order_email(order_id, cart, customer_name, customer_phone, customer_add
 st.markdown("""
 <style>
 .stApp {
-    background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+    background: linear-gradient(to bottom, #f2f2f2, #ffffff); /* Fondo claro */
     font-family: 'Poppins', sans-serif;
-    color: #000000 !important;
+    color: #000000 !important; /* Texto negro */
 }
-.header {
-    text-align: center;
-    color: #e63946;
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 10px;
+header, footer {visibility: hidden;} /* Oculta header y footer de Streamlit */
+input, textarea {
+    background-color: #ffffff !important; /* Fondo blanco */
+    color: #000000 !important; /* Texto negro */
+    border: 2px solid #e63946 !important; /* Borde rojo */
+    border-radius: 8px !important; /* Bordes redondeados */
+    padding: 10px !important;
+    font-size: 16px !important;
 }
-.section-title {
-    background: #e63946;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    padding: 12px;
-    border-radius: 12px;
-    margin-bottom: 20px;
+input:focus, textarea:focus {
+    outline: none !important;
+    border: 2px solid #c22834 !important; /* Color del borde al enfocarse */
+    box-shadow: 0px 0px 5px rgba(226, 57, 70, 0.5) !important;
+}
+.stButton>button {
+    background-color: #e63946; /* Fondo rojo */
+    color: white; /* Texto blanco */
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.stButton>button:hover {
+    background-color: #c22834; /* Cambio de color al pasar el mouse */
 }
 </style>
 """, unsafe_allow_html=True)
