@@ -75,7 +75,7 @@ st.markdown("""
 <style>
 /* Fondo general */
 .stApp {
-     background: linear-gradient(to bottom, #ffe5e5, #ffcccc); /* Fondo suave */
+     background: linear-gradient(to bottom, #ffe5e5, #ffcccc)); /* Fondo suave */
     font-family: 'Poppins', sans-serif;
     color: #000000 !important; /* Texto negro predeterminado */
     padding: 10px;
