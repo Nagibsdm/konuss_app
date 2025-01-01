@@ -75,6 +75,29 @@ def send_order_email(order_id, cart, customer_name, customer_phone, customer_add
 st.markdown("""
 <style>
 .stApp {
+    background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+    font-family: 'Poppins', sans-serif;
+    color: #000000 !important;
+}
+.header {
+    text-align: center;
+    color: #e63946;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.section-title {
+    background: #e63946;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+<style>
+.stApp {
     background: linear-gradient(to bottom, #f2f2f2, #ffffff); /* Fondo claro */
     font-family: 'Poppins', sans-serif;
     color: #000000 !important; /* Texto negro */
