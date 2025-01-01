@@ -98,17 +98,17 @@ h1, h2, h3 {
 
 /* Separadores de sección */
 .section-title {
-    background: #e63946; /* Fondo rojo intenso */
-    color: white !important; /* Texto blanco */
-    font-size: 20px;
+    background-color: #e63946; /* Fondo rojo */
+    color: white; /* Texto blanco */
+    font-size: 18px; /* Ajuste de tamaño de fuente para pantallas pequeñas */
     font-weight: bold;
     text-align: center;
-    padding: 12px;
+    padding: 8px; /* Reducción de padding */
     border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
-    margin-bottom: 20px;
-    text-transform: uppercase;
+    margin-bottom: 15px; /* Espaciado menor */
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
 }
+
 
 /* Entradas de texto y áreas */
 input, textarea {
