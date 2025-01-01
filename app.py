@@ -74,71 +74,120 @@ def send_order_email(order_id, cart, customer_name, customer_phone, customer_add
 # Estilo CSS actualizado
 st.markdown("""
 <style>
-/* Fondo principal claro */
+/* Fondo general */
 .stApp {
-    background: linear-gradient(to bottom, #f9f9f9, #ffffff);
+    background: linear-gradient(to bottom, #ffe6e6, #ffffff); /* Fondo suave con gradiente */
     font-family: 'Poppins', sans-serif;
-    color: #000000 !important; /* Texto negro predeterminado */
-    padding: 10px; /* Espaciado interno para pantallas más pequeñas */
+    color: #333333 !important; /* Texto en gris oscuro */
+    padding: 10px;
 }
 
-/* Texto general */
-body, div, p, span, label, h1, h2, h3, h4, h5, h6 {
-    color: #000000 !important; /* Forzar texto negro */
-    margin: 0; /* Reducir márgenes para mejor ajuste */
+/* Títulos principales */
+h1, h2, h3 {
+    color: #e63946 !important; /* Rojo elegante */
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombras suaves */
+    margin-bottom: 20px;
 }
 
-/* Estilo para separadores de sección */
+/* Separadores de sección */
 .section-title {
-    background-color: #e63946; /* Fondo rojo */
-    color: white; /* Texto blanco */
-    font-size: 18px; /* Ajuste de tamaño de fuente para pantallas pequeñas */
+    background: #e63946;
+    color: white;
+    font-size: 22px;
     font-weight: bold;
     text-align: center;
-    padding: 8px; /* Reducción de padding */
-    border-radius: 10px;
-    margin-bottom: 15px; /* Espaciado menor */
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
-/* Entradas de texto y áreas */
+/* Tarjetas de productos */
+.stColumn > div {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.stColumn > div:hover {
+    transform: scale(1.03); /* Efecto de zoom */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Entradas y áreas de texto */
 input, textarea {
     background-color: #ffffff !important; /* Fondo blanco */
-    color: #000000 !important; /* Texto negro */
+    color: #333333 !important; /* Texto gris oscuro */
     border: 2px solid #e63946 !important; /* Borde rojo */
     border-radius: 8px !important; /* Bordes redondeados */
-    padding: 8px !important; /* Reducción de padding */
-    font-size: 14px !important; /* Ajuste de fuente */
-    width: 100%; /* Asegura que ocupe el ancho completo */
-    box-sizing: border-box; /* Previene desbordamiento horizontal */
+    padding: 10px !important;
+    font-size: 16px !important;
+    width: 100%; /* Ancho completo */
+    box-sizing: border-box;
+    margin-bottom: 10px;
 }
 input:focus, textarea:focus {
     outline: none !important;
-    border: 2px solid #c22834 !important; /* Color del borde al enfocarse */
+    border: 2px solid #c22834 !important;
     box-shadow: 0px 0px 5px rgba(226, 57, 70, 0.5) !important;
 }
 
-/* Botones al lado del producto */
+/* Botones */
 .stButton>button {
     background-color: #e63946; /* Fondo rojo */
     color: white; /* Texto blanco */
-    border-radius: 8px; /* Botón ligeramente redondeado */
-    padding: 5px 10px; /* Tamaño ajustado */
-    font-size: 12px; /* Fuente más pequeña */
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 16px;
     border: none;
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
-    margin-left: 10px; /* Espacio entre botón y texto */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    margin-top: 5px;
+    width: 100%; /* Botón ancho completo */
 }
 .stButton>button:hover {
-    background-color: #c22834; /* Cambio de color al pasar el mouse */
+    background-color: #c22834; /* Más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Efecto de zoom */
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Ocultar header y footer innecesarios */
+/* Mensajes de éxito */
+.stSuccess {
+    background-color: #d4edda !important; /* Verde claro */
+    border-left: 5px solid #28a745 !important;
+    color: #155724 !important;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* Footer y header ocultos */
 header, footer {
     visibility: hidden;
 }
+
+/* Estilo responsive para móviles */
+@media only screen and (max-width: 768px) {
+    .section-title {
+        font-size: 18px; /* Texto más pequeño para móviles */
+        padding: 8px;
+    }
+    .stButton>button {
+        font-size: 14px;
+        padding: 8px;
+    }
+    input, textarea {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
 </style>
 """, unsafe_allow_html=True)
+
 
 
 # Encabezado
