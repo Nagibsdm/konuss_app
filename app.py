@@ -216,35 +216,6 @@ input:focus, textarea:focus {
     }
 }
 
-/* Ajustes para las columnas de productos */
-.stColumn {
-    display: flex;
-    flex-direction: column; /* Asegura que las columnas se alineen correctamente */
-    margin-bottom: 10px; /* Espaciado entre productos */
-    padding: 10px; /* Espaciado interno */
-    background-color: #ffffff; /* Fondo blanco */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
-}
-
-/* Ajustes responsivos */
-@media only screen and (max-width: 768px) {
-    .stColumn {
-        flex-direction: row; /* Mantener horizontal en móviles */
-        align-items: center; /* Centrar contenido */
-        justify-content: space-between; /* Espaciar entre texto y botón */
-        padding: 8px; /* Reducir espaciado en móviles */
-    }
-
-    .stColumn > div {
-        flex: 1; /* Asegura que los textos y botones ocupen el mismo espacio */
-    }
-
-    .stButton > button {
-        font-size: 12px; /* Tamaño más pequeño para botones en móviles */
-        padding: 6px; /* Reducir tamaño del botón */
-    }
-}
 
 </style>
 """, unsafe_allow_html=True)
