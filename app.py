@@ -73,113 +73,115 @@ def send_order_email(order_id, cart, customer_name, customer_phone, customer_add
 
 st.markdown("""
 <style>
-/* Fondo principal */
+/* Fondo principal claro */
 .stApp {
-    background: linear-gradient(to bottom, #fdf5f5, #ffffff); /* Fondo suave con gradiente claro */
-    font-family: 'Poppins', sans-serif; /* Tipografía moderna y legible */
-    color: #000000 !important; /* Texto negro asegurado */
+    background: linear-gradient(to bottom, #fdf5f5, #ffffff); /* Fondo suave */
+    font-family: 'Poppins', sans-serif;
+    color: #000000 !important; /* Texto negro predeterminado */
     padding: 10px;
+}
+
+/* Texto general: Garantía de color negro */
+body, div, p, span, label, h1, h2, h3, h4, h5, h6, textarea, input, button {
+    color: #000000 !important; /* Texto negro forzado */
+    background-color: transparent !important; /* Fondo transparente por defecto */
+    margin: 0;
 }
 
 /* Títulos principales */
 h1, h2, h3 {
-    color: #e63946 !important; /* Títulos en rojo elegante */
+    color: #e63946 !important; /* Rojo elegante para títulos */
     text-align: center;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sombras sutiles */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Sombras suaves */
     margin-bottom: 20px;
 }
 
 /* Separadores de sección */
 .section-title {
     background: #e63946; /* Fondo rojo intenso */
-    color: white !important; /* Texto blanco */
+    color: white !important; /* Texto blanco asegurado */
     font-size: 20px;
     font-weight: bold;
     text-align: center;
     padding: 12px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15); /* Sombra para destacar */
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15);
     margin-bottom: 20px;
     text-transform: uppercase;
 }
 
-/* Tarjetas de productos */
-.stColumn > div {
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    padding: 15px;
-    margin-bottom: 20px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.stColumn > div:hover {
-    transform: scale(1.03); /* Efecto de hover */
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2); /* Mayor sombra al pasar el mouse */
-}
-
-/* Entradas y áreas de texto */
+/* Entradas de texto y áreas */
 input, textarea {
-    background-color: #ffffff !important; /* Fondo blanco */
-    color: #000000 !important; /* Texto negro */
+    background-color: #ffffff !important; /* Fondo blanco asegurado */
+    color: #000000 !important; /* Texto negro garantizado */
     border: 2px solid #e63946 !important; /* Borde rojo */
-    border-radius: 8px !important; /* Bordes redondeados */
-    padding: 12px !important; /* Espaciado amplio */
-    font-size: 16px !important;
-    width: 100%;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 16px;
     box-sizing: border-box;
-    margin-bottom: 15px; /* Espaciado inferior */
+    margin-bottom: 15px;
     transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 input:focus, textarea:focus {
     outline: none !important;
-    border: 2px solid #c22834 !important; /* Rojo más oscuro al enfocar */
-    box-shadow: 0px 0px 6px rgba(226, 57, 70, 0.5); /* Efecto visual */
+    border: 2px solid #c22834 !important;
+    box-shadow: 0px 0px 5px rgba(226, 57, 70, 0.5);
 }
 
 /* Botones */
 .stButton>button {
-    background-color: #e63946; /* Fondo rojo */
+    background-color: #e63946 !important; /* Fondo rojo */
     color: white !important; /* Texto blanco */
     border-radius: 8px;
     padding: 10px 15px;
     font-size: 16px;
     border: none;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     cursor: pointer;
     margin-top: 5px;
     width: 100%;
 }
 .stButton>button:hover {
-    background-color: #c22834; /* Fondo rojo más oscuro */
-    transform: scale(1.05); /* Ligero zoom al pasar el mouse */
+    background-color: #c22834 !important; /* Fondo rojo más oscuro */
+    transform: scale(1.05); /* Efecto de zoom */
     box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Tarjetas de productos */
+.stColumn > div {
+    background-color: #ffffff; /* Fondo blanco */
+    color: #000000 !important; /* Texto negro */
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.stColumn > div:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* Mensajes de éxito */
 .stSuccess {
-    background-color: #d4edda !important; /* Fondo verde claro */
-    border-left: 5px solid #28a745 !important; /* Línea verde */
+    background-color: #d4edda !important; /* Verde claro */
+    border-left: 5px solid #28a745 !important;
     color: #155724 !important; /* Texto verde oscuro */
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
 }
 
-/* Ajuste de elementos sobre fondos verdes */
-div[style*="background-color:#28a745"] * {
-    color: #000000 !important; /* Texto negro */
-}
-
-/* Footer y header ocultos */
+/* Ocultar header y footer innecesarios */
 header, footer {
     visibility: hidden;
 }
 
-/* Ajuste responsive para pantallas pequeñas */
+/* Responsividad */
 @media only screen and (max-width: 768px) {
     .section-title {
-        font-size: 16px; /* Texto más pequeño */
+        font-size: 18px;
         padding: 10px;
     }
     input, textarea {
@@ -187,7 +189,7 @@ header, footer {
         padding: 10px;
     }
     .stButton>button {
-        font-size: 14px; /* Botones más compactos */
+        font-size: 14px;
         padding: 8px;
     }
 }
