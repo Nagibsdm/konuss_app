@@ -76,17 +76,30 @@ st.markdown("""
 <style>
 /* Fondo principal claro */
 .stApp {
-    background: linear-gradient(to bottom, #f2f2f2, #ffffff); /* Fondo claro */
+    background: linear-gradient(to bottom, #f9f9f9, #ffffff);
     font-family: 'Poppins', sans-serif;
-    color: #000000 !important; /* Texto negro por defecto */
+    color: #000000 !important; /* Texto negro predeterminado */
 }
 
-/* Estilo para texto general en todo el contenido */
+/* Estilo para texto general */
 body, div, p, span, label, h1, h2, h3, h4, h5, h6 {
     color: #000000 !important; /* Forzar texto negro */
 }
 
-/* Entradas y áreas de texto */
+/* Estilo para separadores de sección */
+.section-title {
+    background-color: #e63946; /* Fondo rojo */
+    color: white; /* Texto blanco */
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Entradas de texto y áreas */
 input, textarea {
     background-color: #ffffff !important; /* Fondo blanco */
     color: #000000 !important; /* Texto negro */
@@ -95,8 +108,13 @@ input, textarea {
     padding: 10px !important;
     font-size: 16px !important;
 }
+input:focus, textarea:focus {
+    outline: none !important;
+    border: 2px solid #c22834 !important; /* Color del borde al enfocarse */
+    box-shadow: 0px 0px 5px rgba(226, 57, 70, 0.5) !important;
+}
 
-/* Texto en botones */
+/* Botones */
 .stButton>button {
     background-color: #e63946; /* Fondo rojo */
     color: white; /* Texto blanco */
@@ -111,25 +129,21 @@ input, textarea {
 }
 
 /* Ocultar header y footer innecesarios */
-header, footer {visibility: hidden;}
+header, footer {
+    visibility: hidden;
+}
 
 /* Texto sobre fondos verdes */
-div[style*="background-color:#28a745"] * { /* Si detecta fondo verde */
+div[style*="background-color:#28a745"] * {
     color: #000000 !important; /* Asegura texto negro */
 }
 
 /* Texto sobre cualquier fondo blanco */
 div[style*="background-color:#ffffff"] * {
-    color: #000000 !important; /* Texto negro en fondo blanco */
+    color: #000000 !important; /* Texto negro */
 }
 </style>
 """, unsafe_allow_html=True)
-
-st.markdown("<div class='section-title'>📋 Menú</div>", unsafe_allow_html=True)
-st.markdown("<div class='section-title'>🛒 Tu carrito</div>", unsafe_allow_html=True)
-st.markdown("<div class='section-title'>🚀 Finalizar Pedido</div>", unsafe_allow_html=True)
-
-
 
 # Encabezado
 st.markdown("<h1 class='header'>🍕 Konuss - ¡Ahora la pizza se come en cono! 🎉</h1>", unsafe_allow_html=True)
