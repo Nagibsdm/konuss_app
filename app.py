@@ -71,8 +71,7 @@ def send_order_email(order_id, cart, customer_name, customer_phone, customer_add
     except Exception as e:
         st.error(f"❌ Error al enviar el correo: {e}")
 
-# Estilo CSS actualizado
-# Estilo CSS actualizado
+# Estilo CSS completo y corregido
 st.markdown("""
 <style>
 /* Fondo general */
@@ -113,6 +112,7 @@ h1, h2, h3 {
     margin-bottom: 20px;
     transition: transform 0.2s, box-shadow 0.2s;
 }
+
 .stColumn > div:hover {
     transform: scale(1.03); /* Efecto de zoom */
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
@@ -130,6 +130,7 @@ input, textarea {
     box-sizing: border-box;
     margin-bottom: 10px;
 }
+
 input:focus, textarea:focus {
     outline: none !important;
     border: 2px solid #c22834 !important;
@@ -150,22 +151,33 @@ input:focus, textarea:focus {
     margin-top: 5px;
     width: 100%; /* Botón ancho completo */
 }
+
 .stButton>button:hover {
     background-color: #c22834; /* Más oscuro al pasar el mouse */
     transform: scale(1.05); /* Efecto de zoom */
     box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Texto negro sobre fondos verdes */
-div[style*="background-color:##d4edda"] * { /* Detecta fondo verde */
-    color: #000000 !important; /* Fuerza texto negro */
-}
-
 /* Mensajes de éxito */
-.stSuccess {
+div[data-testid="stSuccess"] {
     background-color: #d4edda !important; /* Verde claro */
     border-left: 5px solid #28a745 !important;
-    color: #000000 !important; /* Asegúrate de que el color sea negro */
+    color: #000000 !important; /* Texto negro */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* Texto dentro de los mensajes de éxito */
+div[data-testid="stSuccess"] p {
+    color: #000000 !important; /* Forzar color negro en el texto */
+}
+
+/* Mensajes de error */
+.stError {
+    background-color: #f8d7da !important; /* Rojo claro */
+    border-left: 5px solid #dc3545 !important;
+    color: #721c24 !important; /* Texto rojo oscuro */
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
@@ -193,6 +205,7 @@ header, footer {
 }
 </style>
 """, unsafe_allow_html=True)
+
 
 # Inyectar JavaScript para forzar color negro en los mensajes de éxito
 st.markdown("""
