@@ -99,7 +99,7 @@ h1, h2, h3 {
 /* Separadores de sección */
 .section-title {
     background: #e63946; /* Fondo rojo intenso */
-    color: white !important; /* Texto blanco asegurado */
+    color: white !important; /* Texto blanco */
     font-size: 20px;
     font-weight: bold;
     text-align: center;
