@@ -271,7 +271,7 @@ st.markdown("""
 3. **Efectivo/Tarjeta:**  
    - Contactar al WhatsApp: +58 0424-8943749 para confirmar el método de pago.  
 
-**Nota:La orden se procesará una vez que el pago sea confirmado.**
+**Nota: La orden se procesará una vez que el pago sea confirmado.**
 """)
 
 # Sección Datos del Cliente
