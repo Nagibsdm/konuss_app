@@ -164,7 +164,7 @@ div[style*="background-color:#28a745"] * { /* Detecta fondo verde */
 .stSuccess {
     background-color: #d4edda !important; /* Verde claro */
     border-left: 5px solid #28a745 !important;
-    color: #155724 !important;
+    color: #000000 !important;
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
