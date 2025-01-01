@@ -140,6 +140,21 @@ if any(quantity > 0 for quantity in st.session_state["quantities"].values()):
 else:
     st.write("¡Tu carrito está vacío! 😢")
 
+# Métodos de Pago
+st.markdown("""
+### Métodos de Pago 💳
+1. **PagoMovil:**  
+   - C.I: 8342252  
+   - Teléfono: 0424-8943749  
+   - Banco: Banesco  
+2. **Zelle:**  
+   - Correo: Dimellamaite@hotmail.com  
+3. **Efectivo/Tarjeta:**  
+   - Contactar al WhatsApp: +58 123-456-7890 para confirmar el método de pago.  
+
+**Nota:** La orden se procesará una vez que el pago sea confirmado.
+""")
+
 # Sección Datos del Cliente
 st.markdown("<div class='section-title'>🚀 Finalizar Pedido</div>", unsafe_allow_html=True)
 customer_name = st.text_input("📝 Nombre Completo")
@@ -155,6 +170,6 @@ if st.button("Confirmar Pedido ✅"):
             customer_phone,
             customer_address
         )
-        st.success(f"¡Pedido enviado! Orden ID: {st.session_state['order_id']} 🚀. Por favor, compartir comprobante de pago al WhatsApp +58 0424-8943749 o al correo konussfactory@gmail.com.")
+        st.success(f"¡Pedido enviado! Orden ID: {st.session_state['order_id']} 🚀. Por favor, compartir comprobante de pago al WhatsApp +58 0424-8943749 o al correo konussfactory@gmail.com. ⚠️ El pedido será enviado una vez que se confirme el pago.")
     else:
         st.error("⚠️ Por favor, completa todos los campos.")
