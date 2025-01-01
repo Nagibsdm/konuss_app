@@ -125,6 +125,11 @@ div[style*="background-color:#ffffff"] * {
 </style>
 """, unsafe_allow_html=True)
 
+st.markdown("<div class='section-title'>📋 Menú</div>", unsafe_allow_html=True)
+st.markdown("<div class='section-title'>🛒 Tu carrito</div>", unsafe_allow_html=True)
+st.markdown("<div class='section-title'>🚀 Finalizar Pedido</div>", unsafe_allow_html=True)
+
+
 
 # Encabezado
 st.markdown("<h1 class='header'>🍕 Konuss - ¡Ahora la pizza se come en cono! 🎉</h1>", unsafe_allow_html=True)
