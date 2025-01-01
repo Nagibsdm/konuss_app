@@ -131,7 +131,6 @@ st.markdown("""
         }
     </style>
 """, unsafe_allow_html=True)
-
 # Encabezado
 st.markdown("<h1 class='header'>🍕 Konuss - ¡Ahora la pizza se come en cono! 🎉</h1>", unsafe_allow_html=True)
 st.markdown("<h2 class='subheader'>✨ ¡Haz tu pedido y disfruta de una experiencia única! ✨</h2>", unsafe_allow_html=True)
