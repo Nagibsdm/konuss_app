@@ -10,14 +10,16 @@ TO_EMAIL = "konussfactory@gmail.com"
 
 # Configuración inicial del estado
 if "quantities" not in st.session_state:
-st.session_state["quantities"] = {product["name"]: 0 for product in [
-{"name": "Margarita", "price": 3.90},
-{"name": "Margarita con Jamón", "price": 3.90},
-{"name": "Campagnola", "price": 3.90},
-{"name": "Vegetariana", "price": 3.90},
-{"name": "Pepperoni", "price": 3.90}
-]
-}
+    st.session_state["quantities"] = {
+        product["name"]: 0 for product in [
+            {"name": "Margarita", "price": 3.90},
+            {"name": "Margarita con Jamón", "price": 3.90},
+            {"name": "Campagnola", "price": 3.90},
+            {"name": "Vegetariana", "price": 3.90},
+            {"name": "Pepperoni", "price": 3.90}
+        ]
+    }
+
 if "order_id" not in st.session_state:
 st.session_state["order_id"] = None
 if "total" not in st.session_state:
