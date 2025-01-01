@@ -71,7 +71,7 @@ def send_order_email(order_id, cart, customer_name, customer_phone, customer_add
     except Exception as e:
         st.error(f"❌ Error al enviar el correo: {e}")
 
-# Estilo CSS corregido para asegurar que todos los textos sean negros sobre fondos claros
+# Estilo CSS corregido para restaurar texto negro y eliminar bordes negros
 st.markdown("""
 <style>
 /* Fondo general */
@@ -119,21 +119,23 @@ div[data-testid="stSuccess"] {
     border-radius: 8px;
     padding: 12px 18px;
     font-size: 16px;
-    border: none;
+    border: none; /* Eliminar bordes */
     cursor: pointer;
     width: 100%; /* Botón ancho completo */
     margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Efecto de hover suave */
 }
 
 .stButton > button:hover {
     background-color: #c22834; /* Más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Efecto de zoom */
 }
 
 /* Entrada de texto */
 input, textarea {
     background-color: #ffffff !important; /* Fondo blanco */
     color: #000000 !important; /* Texto negro */
-    border: 2px solid #e63946 !important; /* Borde rojo */
+    border: 1px solid #e0e0e0 !important; /* Bordes suaves gris claro */
     border-radius: 8px !important;
     padding: 12px;
     font-size: 16px;
@@ -144,17 +146,17 @@ input, textarea {
 
 input:focus, textarea:focus {
     outline: none !important;
-    border-color: #c22834 !important; /* Borde rojo oscuro */
+    border-color: #c22834 !important; /* Borde rojo oscuro al enfocarse */
 }
 
-/* Asegurando que todo el texto de la sección "Datos del pedido" sea negro */
+/* Asegurando que todo el texto en la sección "Datos del pedido" sea negro */
 #datos-pedido, #datos-pedido * {
-    color: #000000 !important; /* Forzar texto negro en todo */
+    color: #000000 !important; /* Forzar texto negro en toda la sección */
 }
 
 /* Separador adicional */
 hr {
-    border: 0;
+    border: 0 !important;
     border-top: 2px solid #e63946 !important; /* Línea roja */
     margin: 20px 0 !important;
 }
