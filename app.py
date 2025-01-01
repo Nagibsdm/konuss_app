@@ -31,18 +31,6 @@ products = [
     {"name": "Pepperoni", "price": 3.90, "description": "🍕 Salsa, mozzarella y pepperoni. La que nunca falla."}
 ]
 
-# Mostrar productos con botón al lado
-st.markdown("<div class='section-title'>📋 Menú</div>", unsafe_allow_html=True)
-for product in products:
-    col1, col2 = st.columns([4, 1])
-    with col1:
-        st.write(f"**{product['name']}** - ${product['price']:.2f}")
-        st.write(f"{product['description']}")
-    with col2:
-        if st.button("Añadir", key=f"add_{product['name']}"):
-            st.session_state["quantities"][product["name"]] += 1
-            st.success(f"🎉 ¡{product['name']} añadido al carrito!")
-            
 # Función para generar un ID único de pedido
 def generate_order_id():
     return f"KON-{random.randint(1000, 9999)}"
