@@ -142,16 +142,20 @@ header, footer {
 
 
 # Encabezado
-st.markdown("<h1 class='header'>🍕 Konuss - ¡Ahora la pizza se come en cono! 🎉</h1>", unsafe_allow_html=True)
+st.markdown("<h1 class='header'>🍕 Konuss -¡Ahora la pizza se come en cono!🎉</h1>", unsafe_allow_html=True)
 
 # Sección Menú
 st.markdown("<div class='section-title'>📋 Menú</div>", unsafe_allow_html=True)
 for product in products:
-    st.write(f"**{product['name']}** - ${product['price']:.2f}")
-    st.write(f"{product['description']}")
-    if st.button(f"Añadir {product['name']} al carrito", key=f"add_{product['name']}"):
-        st.session_state["quantities"][product["name"]] += 1
-        st.success(f"🎉 ¡{product['name']} añadido al carrito!")
+    col1, col2 = st.columns([4, 1])  # División de columnas: producto y botón
+    with col1:
+        st.write(f"**{product['name']}** - ${product['price']:.2f}")
+        st.write(f"{product['description']}")
+    with col2:
+        if st.button("Añadir", key=f"add_{product['name']}"):
+            st.session_state["quantities"][product["name"]] += 1
+            st.success(f"🎉 ¡{product['name']} añadido al carrito!")
+
 
 # Sección Carrito
 st.markdown("<div class='section-title'>🛒 Tu carrito</div>", unsafe_allow_html=True)
