@@ -118,16 +118,16 @@ input:focus, textarea:focus {
     box-shadow: 0px 0px 5px rgba(226, 57, 70, 0.5) !important;
 }
 
-/* Botones */
+/* Botones al lado del producto */
 .stButton>button {
     background-color: #e63946; /* Fondo rojo */
     color: white; /* Texto blanco */
     border-radius: 8px; /* Botón ligeramente redondeado */
-    padding: 6px; /* Altura del botón ajustada */
+    padding: 5px 10px; /* Tamaño ajustado */
     font-size: 12px; /* Fuente más pequeña */
-    width: 100%; /* Botones a ancho completo */
     border: none;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+    margin-left: 10px; /* Espacio entre botón y texto */
 }
 .stButton>button:hover {
     background-color: #c22834; /* Cambio de color al pasar el mouse */
@@ -137,27 +137,20 @@ input:focus, textarea:focus {
 header, footer {
     visibility: hidden;
 }
-
-/* Optimización para pantallas pequeñas */
-@media only screen and (max-width: 768px) {
-    .section-title {
-        font-size: 16px; /* Texto más pequeño para móviles */
-        padding: 6px; /* Menos padding */
-    }
-    input, textarea {
-        font-size: 12px; /* Reducir tamaño de fuente */
-        padding: 6px; /* Padding menor */
-    }
-    .stButton>button {
-        font-size: 11px; /* Reducir tamaño del botón */
-        padding: 5px; /* Botones más compactos */
-    }
-    .stApp {
-        padding: 5px; /* Reducir márgenes generales */
-    }
-}
 </style>
 """, unsafe_allow_html=True)
+
+# Mostrar productos con botón al lado
+st.markdown("<div class='section-title'>📋 Menú</div>", unsafe_allow_html=True)
+for product in products:
+    col1, col2 = st.columns([4, 1])
+    with col1:
+        st.write(f"**{product['name']}** - ${product['price']:.2f}")
+        st.write(f"{product['description']}")
+    with col2:
+        if st.button("Añadir", key=f"add_{product['name']}"):
+            st.session_state["quantities"][product["name"]] += 1
+            st.success(f"🎉 ¡{product['name']} añadido al carrito!")
 
 # Encabezado
 st.markdown("<h1 class='header'>🍕 Konuss - ¡Ahora la pizza se come en cono! 🎉</h1>", unsafe_allow_html=True)
