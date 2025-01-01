@@ -70,22 +70,20 @@ def send_order_email(order_id, cart, customer_name, customer_phone, customer_add
         st.success("¡Pedido enviado por correo exitosamente! 🚀")
     except Exception as e:
         st.error(f"❌ Error al enviar el correo: {e}")
-# Estilo CSS optimizado para mantener todo el texto negro, con un diseño limpio y efectivo
+# Estilo CSS básico con TODO en negro y sin optimización para móviles
 st.markdown("""
 <style>
 /* Fondo general */
 .stApp {
-    background-color: #ffffff; /* Fondo blanco */
+    background-color: #ffffff !important; /* Fondo blanco */
     font-family: 'Poppins', sans-serif; /* Fuente moderna */
-    color: #000000; /* Texto negro global */
+    color: #000000 !important; /* Texto negro global */
     padding: 20px;
-    max-width: 1200px; /* Centrar el contenido */
-    margin: 0 auto;
 }
 
 /* Títulos principales */
 h1, h2, h3, h4, h5, h6 {
-    color: #000000; /* Texto negro */
+    color: #000000 !important; /* Texto negro */
     text-align: center;
     margin-bottom: 20px;
     font-weight: bold;
@@ -93,98 +91,79 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Separadores de sección */
 .section-title {
-    background: transparent; /* Fondo transparente */
-    color: #000000; /* Texto negro */
-    font-size: 22px;
-    font-weight: bold;
+    background: #ffffff !important; /* Fondo blanco */
+    color: #000000 !important; /* Texto negro */
+    font-size: 22px !important;
+    font-weight: bold !important;
     text-align: center;
-    padding: 12px;
-    border-radius: 8px;
-    margin: 20px 0;
-    border: 1px solid #000000; /* Borde negro sutil */
+    padding: 12px !important;
+    border-radius: 8px !important;
+    margin: 20px 0 !important;
+    border: 1px solid #000000 !important; /* Borde negro */
 }
 
 /* Mensajes de éxito */
 div[data-testid="stSuccess"] {
-    background-color: #ffffff; /* Fondo blanco */
-    border-left: 5px solid #000000; /* Borde negro */
-    color: #000000; /* Texto negro */
+    background-color: #ffffff !important; /* Fondo blanco */
+    border-left: 5px solid #000000 !important; /* Borde negro */
+    color: #000000 !important; /* Texto negro */
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
 /* Botones */
 .stButton > button {
-    background-color: #000000; /* Fondo negro */
-    color: #ffffff; /* Texto blanco */
-    border-radius: 8px;
-    padding: 12px 18px;
-    font-size: 16px;
-    border: 2px solid #000000; /* Borde negro */
+    background-color: #000000 !important; /* Fondo negro */
+    color: #ffffff !important; /* Texto blanco */
+    border-radius: 8px !important;
+    padding: 12px 18px !important;
+    font-size: 16px !important;
+    border: 2px solid #000000 !important; /* Borde negro */
     cursor: pointer;
     width: 100%; /* Botón ancho completo */
     margin-top: 10px;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .stButton > button:hover {
-    background-color: #333333; /* Fondo más oscuro al pasar el ratón */
-    color: #ffffff; /* Texto blanco */
-    transform: scale(1.05); /* Efecto de zoom */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: #000000 !important; /* Fondo negro */
+    color: #ffffff !important; /* Texto blanco */
 }
 
 /* Entrada de texto */
 input, textarea {
-    background-color: #ffffff; /* Fondo blanco */
-    color: #000000; /* Texto negro */
-    border: 1px solid #000000; /* Borde negro sutil */
-    border-radius: 8px;
-    padding: 12px;
-    font-size: 16px;
-    width: 100%;
-    box-sizing: border-box;
-    margin-bottom: 15px;
-    transition: border-color 0.3s, box-shadow 0.3s;
+    background-color: #ffffff !important; /* Fondo blanco */
+    color: #000000 !important; /* Texto negro */
+    border: 2px solid #000000 !important; /* Borde negro */
+    border-radius: 8px !important;
+    padding: 12px !important;
+    font-size: 16px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    margin-bottom: 15px !important;
 }
 
 input:focus, textarea:focus {
-    outline: none;
-    border-color: #000000; /* Borde negro al enfocarse */
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    outline: none !important;
+    border-color: #000000 !important; /* Borde negro */
 }
 
 /* Asegurando que todo el texto de la sección "Datos del pedido" sea negro */
 #datos-pedido, #datos-pedido * {
-    color: #000000; /* Forzar texto negro en toda la sección */
+    color: #000000 !important; /* Forzar texto negro en toda la sección */
 }
 
 /* Separador adicional */
 hr {
-    border: 0;
-    border-top: 2px solid #000000; /* Línea negra */
-    margin: 20px 0;
+    border: 0 !important;
+    border-top: 2px solid #000000 !important; /* Línea negra */
+    margin: 20px 0 !important;
 }
 
-/* Estilo responsive para móviles */
-@media only screen and (max-width: 768px) {
-    .section-title {
-        font-size: 18px;
-        padding: 8px 15px;
-    }
-    input, textarea {
-        font-size: 14px;
-        padding: 10px;
-    }
-    .stButton > button {
-        font-size: 14px;
-        padding: 10px;
-    }
-}
+/* Sin optimización para móviles: manteniendo el diseño estándar */
 </style>
 """, unsafe_allow_html=True)
+
 
 # Encabezado
 st.markdown("<h1 class='header'>🍕 Konuss -¡Ahora la pizza se come en cono!🎉</h1>", unsafe_allow_html=True)
