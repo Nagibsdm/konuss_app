@@ -156,7 +156,7 @@ input:focus, textarea:focus {
 }
 
 /* Texto negro sobre fondos verdes */
-div[style*="background-color:#28a745"] * { /* Detecta fondo verde */
+div[style*="background-color:##d4edda"] * { /* Detecta fondo verde */
     color: #000000 !important; /* Fuerza texto negro */
 }
 
