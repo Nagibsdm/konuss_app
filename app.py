@@ -71,140 +71,34 @@ def send_order_email(order_id, cart, customer_name, customer_phone, customer_add
     except Exception as e:
         st.error(f"❌ Error al enviar el correo: {e}")
 
-# Estilo CSS completo y corregido
+# Estilo CSS simplificado
 st.markdown("""
 <style>
 /* Fondo general */
 .stApp {
-    background: linear-gradient(to bottom, #ffe6e6, #ffffff); /* Fondo suave con gradiente */
+    background: linear-gradient(to bottom, #ffe6e6, #ffffff); /* Fondo suave */
     font-family: 'Poppins', sans-serif;
-    color: #333333 !important; /* Texto predeterminado en gris oscuro */
-    padding: 10px;
-}
-
-/* Títulos principales */
-h1, h2, h3 {
-    color: #e63946 !important; /* Rojo elegante */
-    text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave */
-    margin-bottom: 20px;
-}
-
-/* Separadores de sección */
-.section-title {
-    background: #e63946;
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
-    text-align: center;
-    padding: 10px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-/* Tarjetas de productos */
-.stColumn > div {
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    margin-bottom: 20px;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.stColumn > div:hover {
-    transform: scale(1.03); /* Efecto de zoom */
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Entradas y áreas de texto */
-input, textarea {
-    background-color: #ffffff !important; /* Fondo blanco */
     color: #333333 !important; /* Texto gris oscuro */
-    border: 2px solid #e63946 !important; /* Borde rojo */
-    border-radius: 8px !important; /* Bordes redondeados */
-    padding: 10px !important;
-    font-size: 16px !important;
-    width: 100%; /* Ancho completo */
-    box-sizing: border-box;
-    margin-bottom: 10px;
-}
-
-input:focus, textarea:focus {
-    outline: none !important;
-    border: 2px solid #c22834 !important;
-    box-shadow: 0px 0px 5px rgba(226, 57, 70, 0.5) !important;
-}
-
-/* Botones */
-.stButton>button {
-    background-color: #e63946; /* Fondo rojo */
-    color: white; /* Texto blanco */
-    border-radius: 8px;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: none;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-    cursor: pointer;
-    margin-top: 5px;
-    width: 100%; /* Botón ancho completo */
-}
-
-.stButton>button:hover {
-    background-color: #c22834; /* Más oscuro al pasar el mouse */
-    transform: scale(1.05); /* Efecto de zoom */
-    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
 }
 
 /* Mensajes de éxito */
 div[data-testid="stSuccess"] {
     background-color: #d4edda !important; /* Verde claro */
-    border-left: 5px solid #28a745 !important;
-    color: #000000 !important; /* Texto negro */
+    border-left: 5px solid #28a745 !important; /* Borde verde */
+    color: #000000 !important; /* Forzar texto negro */
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
 }
 
-/* Texto dentro de los mensajes de éxito */
+/* Asegurar que el texto dentro de los mensajes de éxito sea negro */
 div[data-testid="stSuccess"] p {
-    color: #000000 !important; /* Forzar color negro en el texto */
-}
-
-/* Mensajes de error */
-.stError {
-    background-color: #f8d7da !important; /* Rojo claro */
-    border-left: 5px solid #dc3545 !important;
-    color: #721c24 !important; /* Texto rojo oscuro */
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-}
-
-/* Ocultar header y footer innecesarios */
-header, footer {
-    visibility: hidden;
-}
-
-/* Estilo responsive para móviles */
-@media only screen and (max-width: 768px) {
-    .section-title {
-        font-size: 18px; /* Texto más pequeño para móviles */
-        padding: 8px;
-    }
-    input, textarea {
-        font-size: 14px;
-        padding: 8px;
-    }
-    .stButton>button {
-        font-size: 14px;
-        padding: 8px;
-    }
+    color: #000000 !important;
 }
 </style>
 """, unsafe_allow_html=True)
+
 
 
 # Inyectar JavaScript para forzar color negro en los mensajes de éxito
