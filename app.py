@@ -161,7 +161,7 @@ div[style*="background-color:##d4edda"] * { /* Detecta fondo verde */
 }
 
 /* Mensajes de éxito */
-.stSuccess {
+div[data-testid="stSuccess"] {
     background-color: #d4edda !important; /* Verde claro */
     border-left: 5px solid #28a745 !important;
     color: #000000 !important; /* Asegúrate de que el color sea negro */
@@ -169,6 +169,7 @@ div[style*="background-color:##d4edda"] * { /* Detecta fondo verde */
     margin-bottom: 10px;
     border-radius: 5px;
 }
+
 
 /* Mensajes de éxito más específicos */
 div.stSuccess, div.stSuccess * {
