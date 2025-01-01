@@ -71,12 +71,12 @@ def send_order_email(order_id, cart, customer_name, customer_phone, customer_add
     except Exception as e:
         st.error(f"❌ Error al enviar el correo: {e}")
 
-# Estilo CSS corregido y optimizado para asegurarse que todos los textos sean negros sobre fondos claros
+# Estilo CSS mejorado con mayor especificidad
 st.markdown("""
 <style>
 /* Fondo general */
 .stApp {
-    background: #ffffff; /* Fondo blanco */
+    background: #ffffff !important; /* Fondo blanco */
     font-family: 'Poppins', sans-serif; /* Fuente moderna */
     color: #000000 !important; /* Texto negro global */
     padding: 20px;
@@ -92,10 +92,10 @@ h1, h2, h3 {
 
 /* Separadores de sección */
 .section-title {
-    background: #e63946; /* Fondo rojo */
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
+    background: #e63946 !important; /* Fondo rojo */
+    color: white !important;
+    font-size: 22px !important;
+    font-weight: bold !important;
     text-align: center;
     padding: 12px;
     border-radius: 8px;
@@ -114,21 +114,21 @@ div[data-testid="stSuccess"] {
 
 /* Botones */
 .stButton > button {
-    background-color: #e63946; /* Fondo rojo */
-    color: white; /* Texto blanco */
-    border-radius: 8px;
-    padding: 12px 18px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    width: 100%; /* Botón ancho completo */
+    background-color: #e63946 !important; /* Fondo rojo */
+    color: white !important; /* Texto blanco */
+    border-radius: 8px !important;
+    padding: 12px 18px !important;
+    font-size: 16px !important;
+    border: none !important;
+    cursor: pointer !important;
+    width: 100% !important; /* Botón ancho completo */
     margin-top: 10px;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Efecto de hover suave */
+    transition: background-color 0.3s ease, transform 0.2s ease !important; /* Efecto de hover suave */
 }
 
 .stButton > button:hover {
-    background-color: #c22834; /* Fondo más oscuro al pasar el mouse */
-    transform: scale(1.05); /* Efecto de zoom */
+    background-color: #c22834 !important; /* Más oscuro al pasar el mouse */
+    transform: scale(1.05) !important; /* Efecto de zoom */
 }
 
 /* Entrada de texto */
@@ -137,45 +137,45 @@ input, textarea {
     color: #000000 !important; /* Texto negro */
     border: 2px solid #e63946 !important; /* Borde rojo */
     border-radius: 8px !important;
-    padding: 12px;
-    font-size: 16px;
-    width: 100%;
+    padding: 12px !important;
+    font-size: 16px !important;
+    width: 100% !important;
     box-sizing: border-box;
-    margin-bottom: 15px;
-    transition: border-color 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+    margin-bottom: 15px !important;
+    transition: border-color 0.3s, box-shadow 0.3s !important; /* Transiciones suaves */
 }
 
 input:focus, textarea:focus {
     outline: none !important;
-    border-color: #c22834 !important; /* Borde rojo oscuro al enfocarse */
+    border-color: #c22834 !important; /* Borde rojo oscuro */
     box-shadow: 0px 0px 8px rgba(194, 40, 52, 0.2) !important; /* Sombra suave */
 }
 
-/* Asegurando que todo el texto en la sección de "Datos del pedido" sea negro */
+/* Asegurando que todo el texto en la sección "Datos del pedido" sea negro */
 #datos-pedido, #datos-pedido * {
-    color: #000000 !important; /* Forzar texto negro en todo */
+    color: #000000 !important; /* Forzar texto negro en toda la sección */
 }
 
 /* Separador adicional */
 hr {
-    border: 0;
-    border-top: 2px solid #e63946; /* Línea roja */
-    margin: 20px 0;
+    border: 0 !important;
+    border-top: 2px solid #e63946 !important; /* Línea roja */
+    margin: 20px 0 !important;
 }
 
 /* Estilo responsive para móviles */
 @media only screen and (max-width: 768px) {
     .section-title {
-        font-size: 18px; /* Texto más pequeño para móviles */
-        padding: 8px;
+        font-size: 18px !important;
+        padding: 8px 15px !important;
     }
     input, textarea {
-        font-size: 14px;
-        padding: 10px;
+        font-size: 14px !important;
+        padding: 10px !important;
     }
     .stButton > button {
-        font-size: 14px;
-        padding: 10px;
+        font-size: 14px !important;
+        padding: 10px !important;
     }
 }
 </style>
