@@ -75,7 +75,7 @@ st.markdown("""
 <style>
 /* Fondo general */
 .stApp {
-    background: linear-gradient(to bottom, #ffe5e5, #ffcccc); /* Fondo suave */
+     background: linear-gradient(to bottom, #ffe5e5, #ffcccc)); /* Fondo suave */
     font-family: 'Poppins', sans-serif;
     color: #000000 !important; /* Texto negro predeterminado */
     padding: 10px;
@@ -94,13 +94,13 @@ h1, h2, h3 {
     text-align: center;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Sombras suaves */
     margin-bottom: 20px;
-    font-size: 24px; /* Ajuste para teléfonos */
 }
 
 /* Separadores de sección */
+/* Separadores de sección con prioridad */
 .section-title {
     background: #e63946 !important; /* Fondo rojo intenso */
-    color: #ffffff !important; /* Texto blanco */
+    color: #ffffff !important; /* Texto negro forzado */
     font-size: 20px !important; /* Tamaño de fuente */
     font-weight: bold !important; /* Negrita */
     text-align: center !important; /* Centrado */
@@ -110,6 +110,22 @@ h1, h2, h3 {
     margin-bottom: 20px !important; /* Margen inferior */
     text-transform: uppercase !important; /* Texto en mayúsculas */
 }
+
+/* Reseteo de colores heredados */
+body, div, p, span, label, h1, h2, h3, h4, h5, h6 {
+    color: inherit !important; /* Hereda el color correctamente */
+}
+
+/* Forzar texto negro global */
+* {
+    color: #000000 !important; /* Asegurar texto negro en cualquier elemento */
+}
+
+/* Fondo blanco para cualquier interferencia */
+.section-title * {
+    background-color: transparent !important; /* Fondo transparente dentro de la sección */
+}
+
 
 /* Entradas de texto y áreas */
 input, textarea {
@@ -179,38 +195,19 @@ header, footer {
     visibility: hidden;
 }
 
-/* Ajustes responsivos para móviles */
+/* Responsividad */
 @media only screen and (max-width: 768px) {
-    /* Ajustar tamaño de títulos */
-    h1, h2, h3 {
-        font-size: 20px !important; /* Tamaño reducido */
-        margin-bottom: 15px; /* Margen inferior ajustado */
-    }
-
-    /* Separadores más compactos */
     .section-title {
-        font-size: 16px !important; /* Texto más pequeño */
-        padding: 10px !important; /* Espaciado reducido */
-        margin-bottom: 15px !important;
+        font-size: 18px;
+        padding: 10px;
     }
-
-    /* Entradas más compactas */
     input, textarea {
-        font-size: 14px !important; /* Tamaño de texto más pequeño */
-        padding: 8px !important; /* Espaciado interno reducido */
+        font-size: 14px;
+        padding: 10px;
     }
-
-    /* Botones más compactos */
     .stButton>button {
-        font-size: 14px !important; /* Texto más pequeño */
-        padding: 8px !important; /* Botón más compacto */
-        width: 100%; /* Botón siempre ocupa todo el ancho */
-    }
-
-    /* Reducir márgenes en tarjetas */
-    .stColumn > div {
-        padding: 10px !important; /* Reducir espaciado interno */
-        margin-bottom: 15px !important; /* Menor margen */
+        font-size: 14px;
+        padding: 8px;
     }
 }
 </style>
