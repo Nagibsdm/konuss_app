@@ -71,22 +71,20 @@ def send_order_email(order_id, cart, customer_name, customer_phone, customer_add
     except Exception as e:
         st.error(f"❌ Error al enviar el correo: {e}")
 
-# Estilo CSS renovado y elegante
+# Estilo CSS corregido para asegurar que todos los textos sean negros sobre fondos claros
 st.markdown("""
 <style>
 /* Fondo general */
 .stApp {
-    background-color: #fafafa; /* Fondo claro y limpio */
+    background-color: #fafafa; /* Fondo claro */
     font-family: 'Roboto', sans-serif; /* Tipografía moderna */
-    color: #333333 !important; /* Texto oscuro */
+    color: #000000 !important; /* Texto negro por defecto */
     padding: 30px 20px;
-    max-width: 1200px;
-    margin: 0 auto; /* Centrar el contenido */
 }
 
 /* Títulos principales */
 h1, h2, h3 {
-    color: #2c3e50 !important; /* Color oscuro para los títulos */
+    color: #000000 !important; /* Texto negro */
     text-align: center;
     font-weight: 700;
     margin-bottom: 25px;
@@ -95,15 +93,15 @@ h1, h2, h3 {
 
 /* Separadores de sección */
 .section-title {
-    background: #e6f7ff; /* Fondo azul suave */
-    color: #2c3e50; /* Texto oscuro */
+    background: transparent;
+    color: #000000;
     font-size: 20px;
     font-weight: 600;
     text-align: center;
     padding: 15px 25px;
+    border: 1px solid #000000;
     border-radius: 10px;
     margin: 20px 0;
-    border: 1px solid #2c3e50;
     display: inline-block;
 }
 
@@ -120,15 +118,10 @@ div[data-testid="stSuccess"] {
     font-weight: 400;
 }
 
-/* Asegurar que el texto dentro de los mensajes de éxito sea negro */
-div[data-testid="stSuccess"] p {
-    color: #000000 !important;
-}
-
-/* Entradas y áreas de texto */
+/* Entradas de texto */
 input, textarea {
     background-color: #ffffff !important; /* Fondo blanco */
-    color: #333333 !important; /* Texto negro */
+    color: #000000 !important; /* Texto negro */
     border: 1px solid #e0e0e0 !important; /* Borde gris claro */
     border-radius: 8px !important;
     padding: 12px;
@@ -181,6 +174,11 @@ label[for="nombre_completo"] {
     color: #28a745; /* Color verde */
     font-size: 16px;
     font-weight: bold;
+}
+
+/* Asegurando que todos los textos sobre fondos claros sean negros */
+#datos-pedido, #datos-pedido * {
+    color: #000000 !important; /* Forzar texto negro en toda la sección de "Datos del pedido" */
 }
 
 /* Separador adicional */
