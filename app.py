@@ -71,7 +71,7 @@ def send_order_email(order_id, cart, customer_name, customer_phone, customer_add
     except Exception as e:
         st.error(f"❌ Error al enviar el correo: {e}")
 
-# Estilo CSS mejorado con letras negras en Datos del pedido
+# Estilo CSS mejorado para forzar el color negro en "Datos del pedido"
 st.markdown("""
 <style>
 /* Fondo general */
@@ -160,9 +160,9 @@ input:focus, textarea:focus {
     box-shadow: 0px 0px 5px rgba(226, 57, 70, 0.5) !important;
 }
 
-/* Estilo para la sección "Datos del pedido" */
-#datos-pedido {
-    color: #000000 !important; /* Asegura que todo el texto sea negro */
+/* Asegurando que todo el texto de la sección "Datos del pedido" sea negro */
+#datos-pedido, #datos-pedido * {
+    color: #000000 !important; /* Forzar texto negro en todo */
 }
 
 /* Separador adicional */
@@ -189,7 +189,6 @@ hr {
 }
 </style>
 """, unsafe_allow_html=True)
-
 
 # Encabezado
 st.markdown("<h1 class='header'>🍕 Konuss -¡Ahora la pizza se come en cono!🎉</h1>", unsafe_allow_html=True)
