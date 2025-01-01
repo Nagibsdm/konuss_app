@@ -160,19 +160,14 @@ div[style*="background-color:##d4edda"] * { /* Detecta fondo verde */
     color: #000000 !important; /* Fuerza texto negro */
 }
 
-/* Mensajes de éxito */
-div.stSuccess, div.stSuccess * {
-    color: #000000 !important; /* Forzar texto negro */
+/* Apuntar a los mensajes de éxito específicos usando la clase interna de Streamlit */
+div[data-testid="stMarkdownContainer"] .stSuccess {
     background-color: #d4edda !important; /* Verde claro */
     border-left: 5px solid #28a745 !important;
+    color: #000000 !important; /* Forzar texto negro */
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
-}
-
-/* Estilo de texto para elementos dentro de un mensaje de éxito */
-div.stSuccess {
-    color: #000000 !important;
 }
 
 
