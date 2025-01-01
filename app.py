@@ -71,14 +71,14 @@ def send_order_email(order_id, cart, customer_name, customer_phone, customer_add
     except Exception as e:
         st.error(f"❌ Error al enviar el correo: {e}")
 
-# Estilo CSS corregido para asegurar que todos los textos sean negros sobre fondos claros
+# Estilo CSS corregido y optimizado para asegurarse que todos los textos sean negros sobre fondos claros
 st.markdown("""
 <style>
 /* Fondo general */
 .stApp {
-    background: #ffffff;
-    font-family: 'Poppins', sans-serif;
-    color: #000000 !important; /* Texto negro */
+    background: #ffffff; /* Fondo blanco */
+    font-family: 'Poppins', sans-serif; /* Fuente moderna */
+    color: #000000 !important; /* Texto negro global */
     padding: 20px;
 }
 
@@ -92,7 +92,7 @@ h1, h2, h3 {
 
 /* Separadores de sección */
 .section-title {
-    background: #e63946;
+    background: #e63946; /* Fondo rojo */
     color: white;
     font-size: 22px;
     font-weight: bold;
@@ -104,7 +104,7 @@ h1, h2, h3 {
 
 /* Mensajes de éxito */
 div[data-testid="stSuccess"] {
-    background-color: #d4edda !important; /* Verde claro */
+    background-color: #d4edda !important; /* Fondo verde claro */
     border-left: 5px solid #28a745 !important; /* Borde verde */
     color: #000000 !important; /* Texto negro */
     padding: 15px;
@@ -121,17 +121,19 @@ div[data-testid="stSuccess"] {
     font-size: 16px;
     border: none;
     cursor: pointer;
-    width: 100%; /* Ancho completo para botones */
+    width: 100%; /* Botón ancho completo */
     margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Efecto de hover suave */
 }
 
 .stButton > button:hover {
-    background-color: #c22834; /* Más oscuro al pasar el mouse */
+    background-color: #c22834; /* Fondo más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Efecto de zoom */
 }
 
 /* Entrada de texto */
 input, textarea {
-    background-color: #ffffff !important;
+    background-color: #ffffff !important; /* Fondo blanco */
     color: #000000 !important; /* Texto negro */
     border: 2px solid #e63946 !important; /* Borde rojo */
     border-radius: 8px !important;
@@ -140,14 +142,16 @@ input, textarea {
     width: 100%;
     box-sizing: border-box;
     margin-bottom: 15px;
+    transition: border-color 0.3s, box-shadow 0.3s; /* Transiciones suaves */
 }
 
 input:focus, textarea:focus {
     outline: none !important;
-    border-color: #c22834 !important;
+    border-color: #c22834 !important; /* Borde rojo oscuro al enfocarse */
+    box-shadow: 0px 0px 8px rgba(194, 40, 52, 0.2) !important; /* Sombra suave */
 }
 
-/* Asegurando que todo el texto de la sección "Datos del pedido" sea negro */
+/* Asegurando que todo el texto en la sección de "Datos del pedido" sea negro */
 #datos-pedido, #datos-pedido * {
     color: #000000 !important; /* Forzar texto negro en todo */
 }
@@ -175,9 +179,7 @@ hr {
     }
 }
 </style>
-
 """, unsafe_allow_html=True)
-
 
 
 # Encabezado
