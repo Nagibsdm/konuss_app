@@ -75,7 +75,7 @@ st.markdown("""
 <style>
 /* Fondo general */
 .stApp {
-     background: linear-gradient(to bottom, #ffe5e5, #ffcccc)); /* Fondo suave */
+    background: linear-gradient(to bottom, #ffe5e5, #ffcccc);
     font-family: 'Poppins', sans-serif;
     color: #000000 !important; /* Texto negro predeterminado */
     padding: 10px;
@@ -97,35 +97,18 @@ h1, h2, h3 {
 }
 
 /* Separadores de sección */
-/* Separadores de sección con prioridad */
 .section-title {
-    background: #e63946 !important; /* Fondo rojo intenso */
-    color: #ffffff !important; /* Texto negro forzado */
-    font-size: 20px !important; /* Tamaño de fuente */
-    font-weight: bold !important; /* Negrita */
-    text-align: center !important; /* Centrado */
-    padding: 12px !important; /* Espaciado interno */
-    border-radius: 10px !important; /* Bordes redondeados */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15) !important; /* Sombra */
-    margin-bottom: 20px !important; /* Margen inferior */
-    text-transform: uppercase !important; /* Texto en mayúsculas */
+    background: #e63946; /* Fondo rojo intenso */
+    color: #ffffff; /* Texto blanco */
+    font-size: 20px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    text-align: center; /* Centrado */
+    padding: 12px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15); /* Sombra */
+    margin-bottom: 20px; /* Margen inferior */
+    text-transform: uppercase; /* Texto en mayúsculas */
 }
-
-/* Reseteo de colores heredados */
-body, div, p, span, label, h1, h2, h3, h4, h5, h6 {
-    color: inherit !important; /* Hereda el color correctamente */
-}
-
-/* Forzar texto negro global */
-* {
-    color: #000000 !important; /* Asegurar texto negro en cualquier elemento */
-}
-
-/* Fondo blanco para cualquier interferencia */
-.section-title * {
-    background-color: transparent !important; /* Fondo transparente dentro de la sección */
-}
-
 
 /* Entradas de texto y áreas */
 input, textarea {
@@ -147,8 +130,8 @@ input:focus, textarea:focus {
 
 /* Botones */
 .stButton>button {
-    background-color: #e63946 !important; /* Fondo rojo */
-    color: white !important; /* Texto blanco */
+    background-color: #e63946; /* Fondo rojo */
+    color: white; /* Texto blanco */
     border-radius: 8px;
     padding: 10px 15px;
     font-size: 16px;
@@ -160,7 +143,7 @@ input:focus, textarea:focus {
     width: 100%;
 }
 .stButton>button:hover {
-    background-color: #c22834 !important; /* Fondo rojo más oscuro */
+    background-color: #c22834; /* Fondo rojo más oscuro */
     transform: scale(1.05); /* Efecto de zoom */
     box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
 }
@@ -168,7 +151,7 @@ input:focus, textarea:focus {
 /* Tarjetas de productos */
 .stColumn > div {
     background-color: #ffffff; /* Fondo blanco */
-    color: #000000 !important; /* Texto negro */
+    color: #000000; /* Texto negro */
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     padding: 15px;
@@ -209,63 +192,25 @@ header, footer {
         font-size: 14px;
         padding: 8px;
     }
-}
-
-            /* Alinear los elementos de los productos horizontalmente */
-.product-container {
-    display: flex; /* Disposición en fila */
-    align-items: center; /* Centrado vertical */
-    justify-content: space-between; /* Espaciado entre texto y botón */
-    background-color: #ffffff; /* Fondo blanco */
-    color: #000000; /* Texto negro */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
-    padding: 10px; /* Espaciado interno */
-    margin-bottom: 15px; /* Espaciado entre productos */
-}
-
-/* Ajustar el texto del producto */
-.product-info {
-    flex: 3; /* Toma el 70% del espacio horizontal */
-    text-align: left; /* Alineación a la izquierda */
-}
-
-/* Botón "Añadir" */
-.add-button {
-    flex: 1; /* Toma el 30% del espacio horizontal */
-    background-color: #e63946; /* Fondo rojo */
-    color: white; /* Texto blanco */
-    border: none;
-    border-radius: 8px; /* Bordes redondeados */
-    padding: 8px 10px; /* Espaciado interno */
-    font-size: 14px; /* Texto tamaño medio */
-    text-align: center;
-    cursor: pointer;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.add-button:hover {
-    background-color: #c22834; /* Fondo rojo oscuro */
-    transform: scale(1.05); /* Zoom ligero al pasar */
-}
-
-/* Ajuste responsivo para móviles */
-@media only screen and (max-width: 768px) {
+    .stColumn > div {
+        padding: 10px;
+        margin-bottom: 15px;
+    }
     .product-container {
-        flex-direction: row; /* Mantener disposición horizontal */
-        padding: 8px; /* Reducir el espaciado interno */
+        padding: 8px;
     }
     .product-info {
-        font-size: 14px; /* Texto más pequeño */
+        font-size: 14px;
     }
     .add-button {
-        font-size: 12px; /* Botón más pequeño */
-        padding: 6px; /* Espaciado menor */
+        font-size: 12px;
+        padding: 6px;
     }
 }
-
 </style>
 """, unsafe_allow_html=True)
+
+¡Espero que esta versión sea más amigable y funcional para smartphones! Si necesitas más ajustes, estaré encantado de ayudarte. 😊
 
 
 # Encabezado
