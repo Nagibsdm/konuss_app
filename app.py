@@ -72,46 +72,100 @@ def send_order_email(order_id, cart, customer_name, customer_phone, customer_add
         st.error(f"❌ Error al enviar el correo: {e}")
 
 # Estilo CSS simplificado
+# Estilo CSS mejorado
 st.markdown("""
 <style>
 /* Fondo general */
 .stApp {
     background: linear-gradient(to bottom, #ffe6e6, #ffffff); /* Fondo suave */
     font-family: 'Poppins', sans-serif;
-    color: #333333 !important; /* Texto gris oscuro */
-    padding: 10px;
+    color: #333333 !important; /* Texto gris oscuro por defecto */
+    padding: 20px;
+}
+
+/* Títulos principales */
+h1, h2, h3 {
+    color: #e63946 !important; /* Rojo elegante para títulos */
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15); /* Sombra suave */
+    margin-bottom: 20px;
 }
 
 /* Mensajes de éxito */
 div[data-testid="stSuccess"] {
     background-color: #d4edda !important; /* Verde claro */
     border-left: 5px solid #28a745 !important; /* Borde verde */
-    color: #000000 !important; /* Forzar texto negro */
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
+    color: #000000 !important; /* Texto negro */
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    font-size: 16px;
 }
 
 /* Asegurar que el texto dentro de los mensajes de éxito sea negro */
 div[data-testid="stSuccess"] p {
     color: #000000 !important;
 }
+
+/* Botones */
+.stButton > button {
+    background-color: #e63946; /* Fondo rojo */
+    color: white; /* Texto blanco */
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-size: 16px;
+    border: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    width: 100%; /* Ancho completo para botones */
+    margin-top: 10px;
+}
+
+.stButton > button:hover {
+    background-color: #c22834; /* Más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Efecto de zoom */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Entrada de texto */
+input, textarea {
+    background-color: #ffffff !important; /* Fondo blanco */
+    color: #333333 !important; /* Texto gris oscuro */
+    border: 2px solid #e63946 !important; /* Borde rojo */
+    border-radius: 8px !important; /* Bordes redondeados */
+    padding: 12px;
+    font-size: 16px;
+    width: 100%; /* Ancho completo */
+    box-sizing: border-box;
+    margin-bottom: 15px;
+}
+
+input:focus, textarea:focus {
+    outline: none !important;
+    border: 2px solid #c22834 !important;
+    box-shadow: 0px 0px 5px rgba(226, 57, 70, 0.5) !important;
+}
+
+/* Estilo responsive para móviles */
+@media only screen and (max-width: 768px) {
+    .section-title {
+        font-size: 18px; /* Texto más pequeño para móviles */
+        padding: 8px;
+    }
+    input, textarea {
+        font-size: 14px;
+        padding: 10px;
+    }
+    .stButton > button {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
 </style>
 """, unsafe_allow_html=True)
 
-
-
-# Inyectar JavaScript para forzar color negro en los mensajes de éxito
-st.markdown("""
-<script>
-    window.onload = function() {
-        var successMessages = document.querySelectorAll('.st-success');
-        successMessages.forEach(function(message) {
-            message.style.color = 'black';  // Cambiar color de texto a negro
-        });
-    }
-</script>
-""", unsafe_allow_html=True)
 
 # Encabezado
 st.markdown("<h1 class='header'>🍕 Konuss -¡Ahora la pizza se come en cono!🎉</h1>", unsafe_allow_html=True)
