@@ -76,15 +76,15 @@ st.markdown("""
 <style>
 /* Fondo general */
 .stApp {
-    background: linear-gradient(to bottom, #ffe6e6, #ffffff); /* Fondo suave */
+    background: linear-gradient(to bottom, #ffe6e6, #ffffff);
     font-family: 'Poppins', sans-serif;
-    color: #333333 !important; /* Texto gris oscuro por defecto */
+    color: #000000 !important; /* Texto negro */
     padding: 20px;
 }
 
 /* Títulos principales */
 h1, h2, h3 {
-    color: #e63946 !important; /* Rojo elegante para títulos */
+    color: #000000 !important; /* Texto negro */
     text-align: center;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15); /* Sombra suave */
     margin-bottom: 20px;
@@ -143,13 +143,13 @@ div[data-testid="stSuccess"] p {
 
 /* Entrada de texto */
 input, textarea {
-    background-color: #ffffff !important; /* Fondo blanco */
-    color: #333333 !important; /* Texto gris oscuro */
+    background-color: #ffffff !important;
+    color: #000000 !important; /* Texto negro */
     border: 2px solid #e63946 !important; /* Borde rojo */
-    border-radius: 8px !important; /* Bordes redondeados */
+    border-radius: 8px !important;
     padding: 12px;
     font-size: 16px;
-    width: 100%; /* Ancho completo */
+    width: 100%;
     box-sizing: border-box;
     margin-bottom: 15px;
 }
