@@ -97,16 +97,33 @@ h1, h2, h3 {
 }
 
 /* Separadores de sección */
+/* Separadores de sección con prioridad */
 .section-title {
-    background-color: #e63946; /* Fondo rojo */
-    color: white; /* Texto blanco */
-    font-size: 18px; /* Ajuste de tamaño de fuente para pantallas pequeñas */
-    font-weight: bold;
-    text-align: center;
-    padding: 8px; /* Reducción de padding */
-    border-radius: 10px;
-    margin-bottom: 15px; /* Espaciado menor */
-    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
+    background: #e63946 !important; /* Fondo rojo intenso */
+    color: #000000 !important; /* Texto negro forzado */
+    font-size: 20px !important; /* Tamaño de fuente */
+    font-weight: bold !important; /* Negrita */
+    text-align: center !important; /* Centrado */
+    padding: 12px !important; /* Espaciado interno */
+    border-radius: 10px !important; /* Bordes redondeados */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15) !important; /* Sombra */
+    margin-bottom: 20px !important; /* Margen inferior */
+    text-transform: uppercase !important; /* Texto en mayúsculas */
+}
+
+/* Reseteo de colores heredados */
+body, div, p, span, label, h1, h2, h3, h4, h5, h6 {
+    color: inherit !important; /* Hereda el color correctamente */
+}
+
+/* Forzar texto negro global */
+* {
+    color: #000000 !important; /* Asegurar texto negro en cualquier elemento */
+}
+
+/* Fondo blanco para cualquier interferencia */
+.section-title * {
+    background-color: transparent !important; /* Fondo transparente dentro de la sección */
 }
 
 
