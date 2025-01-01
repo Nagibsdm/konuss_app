@@ -71,17 +71,15 @@ def send_order_email(order_id, cart, customer_name, customer_phone, customer_add
     except Exception as e:
         st.error(f"❌ Error al enviar el correo: {e}")
 
-# Estilo CSS optimizado y corregido para asegurar que todos los textos sean negros sobre fondos claros
+# Estilo CSS corregido para asegurar que todos los textos sean negros sobre fondos claros
 st.markdown("""
 <style>
 /* Fondo general */
 .stApp {
-    background-color: #ffffff !important; /* Fondo blanco */
-    font-family: 'Poppins', sans-serif; /* Tipografía moderna */
+    background-color: #ffffff; /* Fondo blanco */
+    font-family: 'Poppins', sans-serif; /* Fuente moderna */
     color: #000000 !important; /* Texto negro global */
-    padding: 30px;
-    margin: 0 auto; /* Centrar el contenido */
-    max-width: 1200px;
+    padding: 20px;
 }
 
 /* Títulos principales */
@@ -94,7 +92,7 @@ h1, h2, h3 {
 
 /* Separadores de sección */
 .section-title {
-    background-color: #e63946; /* Fondo rojo */
+    background: #e63946; /* Fondo rojo */
     color: white; /* Texto blanco */
     font-size: 22px;
     font-weight: bold;
@@ -116,21 +114,19 @@ div[data-testid="stSuccess"] {
 
 /* Botones */
 .stButton > button {
-    background-color: #007bff; /* Fondo azul */
+    background-color: #e63946; /* Fondo rojo */
     color: white; /* Texto blanco */
     border-radius: 8px;
     padding: 12px 18px;
     font-size: 16px;
     border: none;
     cursor: pointer;
-    width: 100%; /* Ancho completo para botones */
+    width: 100%; /* Botón ancho completo */
     margin-top: 10px;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Efecto de hover suave */
 }
 
 .stButton > button:hover {
-    background-color: #0056b3 !important; /* Más oscuro al pasar el mouse */
-    transform: scale(1.05); /* Efecto de zoom */
+    background-color: #c22834; /* Más oscuro al pasar el mouse */
 }
 
 /* Entrada de texto */
@@ -144,18 +140,16 @@ input, textarea {
     width: 100%;
     box-sizing: border-box;
     margin-bottom: 15px !important;
-    transition: border-color 0.3s, box-shadow 0.3s !important; /* Transiciones suaves */
 }
 
 input:focus, textarea:focus {
     outline: none !important;
     border-color: #c22834 !important; /* Borde rojo oscuro */
-    box-shadow: 0px 0px 8px rgba(194, 40, 52, 0.2) !important; /* Sombra suave */
 }
 
-/* Asegurando que todo el texto en la sección "Datos del pedido" sea negro */
+/* Asegurando que todo el texto de la sección "Datos del pedido" sea negro */
 #datos-pedido, #datos-pedido * {
-    color: #000000 !important; /* Forzar texto negro en toda la sección */
+    color: #000000 !important; /* Forzar texto negro en todo */
 }
 
 /* Separador adicional */
