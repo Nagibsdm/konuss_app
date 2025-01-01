@@ -1,0 +1,14 @@
+
+env/
+__pycache__/
+.DS_Store
+# Ignorar todo
+*
+
+# Excepciones: incluir solo la carpeta konuss_app y este archivo
+!.gitignore
+!konuss_app/
+
+
+
+
