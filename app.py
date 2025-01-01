@@ -76,123 +76,94 @@ st.markdown("""
 <style>
 /* Fondo general */
 .stApp {
-    background-color: #fafafa; /* Fondo claro */
-    font-family: 'Roboto', sans-serif; /* Tipografía moderna */
-    color: #000000 !important; /* Texto negro por defecto */
-    padding: 30px 20px;
+    background: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    color: #000000 !important; /* Texto negro */
+    padding: 20px;
 }
 
 /* Títulos principales */
 h1, h2, h3 {
     color: #000000 !important; /* Texto negro */
     text-align: center;
-    font-weight: 700;
-    margin-bottom: 25px;
-    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
 /* Separadores de sección */
 .section-title {
-    background: transparent;
-    color: #000000;
-    font-size: 20px;
-    font-weight: 600;
+    background: #e63946;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
     text-align: center;
-    padding: 15px 25px;
-    border: 1px solid #000000;
-    border-radius: 10px;
+    padding: 12px;
+    border-radius: 8px;
     margin: 20px 0;
-    display: inline-block;
 }
 
 /* Mensajes de éxito */
 div[data-testid="stSuccess"] {
-    background-color: #dff0d8 !important; /* Fondo verde claro */
+    background-color: #d4edda !important; /* Verde claro */
     border-left: 5px solid #28a745 !important; /* Borde verde */
     color: #000000 !important; /* Texto negro */
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    font-size: 16px;
-    font-weight: 400;
-}
-
-/* Entradas de texto */
-input, textarea {
-    background-color: #ffffff !important; /* Fondo blanco */
-    color: #000000 !important; /* Texto negro */
-    border: 1px solid #e0e0e0 !important; /* Borde gris claro */
-    border-radius: 8px !important;
-    padding: 12px;
-    font-size: 16px;
-    width: 100%;
-    box-sizing: border-box;
-    margin-bottom: 20px;
-    transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-input:focus, textarea:focus {
-    outline: none !important;
-    border-color: #007bff !important; /* Borde azul */
-    box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.2) !important; /* Sombra azul suave */
 }
 
 /* Botones */
 .stButton > button {
-    background-color: #007bff; /* Fondo azul */
+    background-color: #e63946; /* Fondo rojo */
     color: white; /* Texto blanco */
     border-radius: 8px;
     padding: 12px 18px;
     font-size: 16px;
     border: none;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
-    width: 100%;
+    width: 100%; /* Ancho completo para botones */
     margin-top: 10px;
 }
 
 .stButton > button:hover {
-    background-color: #0056b3; /* Fondo más oscuro al pasar el mouse */
-    transform: scale(1.05);
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    background-color: #c22834; /* Más oscuro al pasar el mouse */
 }
 
-/* Botones Añadir (estilo personalizado) */
-.stButton > button[data-testid="add"] {
-    background-color: #28a745; /* Verde para los botones de añadir */
-    color: white;
-}
-
-.stButton > button[data-testid="add"]:hover {
-    background-color: #218838; /* Más oscuro al pasar el mouse */
-}
-
-/* Texto en verde para "Nombre Completo" */
-label[for="nombre_completo"] {
-    color: #28a745; /* Color verde */
+/* Entrada de texto */
+input, textarea {
+    background-color: #ffffff !important;
+    color: #000000 !important; /* Texto negro */
+    border: 2px solid #e63946 !important; /* Borde rojo */
+    border-radius: 8px !important;
+    padding: 12px;
     font-size: 16px;
-    font-weight: bold;
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 15px;
 }
 
-/* Asegurando que todos los textos sobre fondos claros sean negros */
+input:focus, textarea:focus {
+    outline: none !important;
+    border-color: #c22834 !important;
+}
+
+/* Asegurando que todo el texto de la sección "Datos del pedido" sea negro */
 #datos-pedido, #datos-pedido * {
-    color: #000000 !important; /* Forzar texto negro en toda la sección de "Datos del pedido" */
+    color: #000000 !important; /* Forzar texto negro en todo */
 }
 
 /* Separador adicional */
 hr {
     border: 0;
-    border-top: 2px solid #e0e0e0; /* Línea gris */
+    border-top: 2px solid #e63946; /* Línea roja */
     margin: 20px 0;
 }
 
 /* Estilo responsive para móviles */
 @media only screen and (max-width: 768px) {
     .section-title {
-        font-size: 18px;
-        padding: 8px 15px;
+        font-size: 18px; /* Texto más pequeño para móviles */
+        padding: 8px;
     }
     input, textarea {
         font-size: 14px;
@@ -204,6 +175,7 @@ hr {
     }
 }
 </style>
+
 """, unsafe_allow_html=True)
 
 
