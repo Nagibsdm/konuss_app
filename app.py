@@ -71,15 +71,17 @@ def send_order_email(order_id, cart, customer_name, customer_phone, customer_add
     except Exception as e:
         st.error(f"❌ Error al enviar el correo: {e}")
 
-# Estilo CSS mejorado con mayor especificidad
+# Estilo CSS optimizado y corregido para asegurar que todos los textos sean negros sobre fondos claros
 st.markdown("""
 <style>
 /* Fondo general */
 .stApp {
-    background: #ffffff !important; /* Fondo blanco */
-    font-family: 'Poppins', sans-serif; /* Fuente moderna */
+    background-color: #ffffff !important; /* Fondo blanco */
+    font-family: 'Poppins', sans-serif; /* Tipografía moderna */
     color: #000000 !important; /* Texto negro global */
-    padding: 20px;
+    padding: 30px;
+    margin: 0 auto; /* Centrar el contenido */
+    max-width: 1200px;
 }
 
 /* Títulos principales */
@@ -92,10 +94,10 @@ h1, h2, h3 {
 
 /* Separadores de sección */
 .section-title {
-    background: #e63946 !important; /* Fondo rojo */
-    color: white !important;
-    font-size: 22px !important;
-    font-weight: bold !important;
+    background-color: #e63946; /* Fondo rojo */
+    color: white; /* Texto blanco */
+    font-size: 22px;
+    font-weight: bold;
     text-align: center;
     padding: 12px;
     border-radius: 8px;
@@ -114,21 +116,21 @@ div[data-testid="stSuccess"] {
 
 /* Botones */
 .stButton > button {
-    background-color: #e63946 !important; /* Fondo rojo */
-    color: white !important; /* Texto blanco */
-    border-radius: 8px !important;
-    padding: 12px 18px !important;
-    font-size: 16px !important;
-    border: none !important;
-    cursor: pointer !important;
-    width: 100% !important; /* Botón ancho completo */
+    background-color: #007bff; /* Fondo azul */
+    color: white; /* Texto blanco */
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 100%; /* Ancho completo para botones */
     margin-top: 10px;
-    transition: background-color 0.3s ease, transform 0.2s ease !important; /* Efecto de hover suave */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Efecto de hover suave */
 }
 
 .stButton > button:hover {
-    background-color: #c22834 !important; /* Más oscuro al pasar el mouse */
-    transform: scale(1.05) !important; /* Efecto de zoom */
+    background-color: #0056b3 !important; /* Más oscuro al pasar el mouse */
+    transform: scale(1.05); /* Efecto de zoom */
 }
 
 /* Entrada de texto */
@@ -137,9 +139,9 @@ input, textarea {
     color: #000000 !important; /* Texto negro */
     border: 2px solid #e63946 !important; /* Borde rojo */
     border-radius: 8px !important;
-    padding: 12px !important;
-    font-size: 16px !important;
-    width: 100% !important;
+    padding: 12px;
+    font-size: 16px;
+    width: 100%;
     box-sizing: border-box;
     margin-bottom: 15px !important;
     transition: border-color 0.3s, box-shadow 0.3s !important; /* Transiciones suaves */
@@ -158,7 +160,7 @@ input:focus, textarea:focus {
 
 /* Separador adicional */
 hr {
-    border: 0 !important;
+    border: 0;
     border-top: 2px solid #e63946 !important; /* Línea roja */
     margin: 20px 0 !important;
 }
@@ -180,6 +182,7 @@ hr {
 }
 </style>
 """, unsafe_allow_html=True)
+
 
 
 # Encabezado
