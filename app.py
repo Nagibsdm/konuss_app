@@ -202,7 +202,7 @@ st.markdown("""
 """)
 
 # Sección Datos del Cliente
-st.markdown("<div class='section-title'>🚀 Finalizar Pedido</div>", unsafe_allow_html=True)
+st.markdown("<div class='section-title'>🚀 Datos del pedido</div>", unsafe_allow_html=True)
 customer_name = st.text_input("📝 Nombre Completo")
 customer_phone = st.text_input("📞 Teléfono")
 customer_address = st.text_area("📍 Dirección")
