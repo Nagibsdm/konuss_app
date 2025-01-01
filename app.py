@@ -210,8 +210,6 @@ header, footer {
 </style>
 """, unsafe_allow_html=True)
 
-¡Espero que esta versión sea más amigable y funcional para smartphones! Si necesitas más ajustes, estaré encantado de ayudarte. 😊
-
 
 # Encabezado
 st.markdown("<h1 class='header'>🍕 Konuss -¡Ahora la pizza se come en cono!🎉</h1>", unsafe_allow_html=True)
