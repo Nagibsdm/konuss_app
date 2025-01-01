@@ -164,11 +164,17 @@ div[style*="background-color:##d4edda"] * { /* Detecta fondo verde */
 .stSuccess {
     background-color: #d4edda !important; /* Verde claro */
     border-left: 5px solid #28a745 !important;
-    color: #000000 !important;
+    color: #000000 !important; /* Asegúrate de que el color sea negro */
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
 }
+
+/* Mensajes de éxito más específicos */
+div.stSuccess, div.stSuccess * {
+    color: #000000 !important; /* Forzar texto negro */
+}
+
 
 /* Ocultar header y footer innecesarios */
 header, footer {
