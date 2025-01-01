@@ -75,68 +75,139 @@ st.markdown("""
 <style>
 /* Fondo general */
 .stApp {
-    background: linear-gradient(to bottom, #ffe5e5, #ffcccc); /* Fondo suave */
+     background: linear-gradient(to bottom, #ffe5e5, #ffcccc)); /* Fondo suave */
     font-family: 'Poppins', sans-serif;
     color: #000000 !important; /* Texto negro predeterminado */
     padding: 10px;
 }
 
-/* Contenedor para productos: estilo de fila */
-.product-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #ffffff; /* Fondo blanco */
-    color: #000000; /* Texto negro */
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
-    padding: 10px;
-    margin-bottom: 15px; /* Separación entre filas */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.product-container:hover {
-    transform: scale(1.02); /* Efecto de zoom al pasar el mouse */
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+/* Texto general */
+body, div, p, span, label, h1, h2, h3, h4, h5, h6, textarea, input, button {
+    color: #000000 !important; /* Texto negro forzado */
+    background-color: transparent !important; /* Fondo transparente por defecto */
+    margin: 0;
 }
 
-/* Estilo de texto del producto */
-.product-info {
-    flex: 3; /* Toma el 70% del espacio */
-    text-align: left;
-}
-
-/* Botón "Añadir" */
-.add-button {
-    flex: 1; /* Toma el 30% del espacio */
-    background-color: #e63946 !important;
-    color: white !important;
-    border-radius: 8px;
-    padding: 8px;
-    font-size: 14px;
-    border: none;
+/* Títulos principales */
+h1, h2, h3 {
+    color: #e63946 !important; /* Títulos en rojo elegante */
     text-align: center;
-    cursor: pointer;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Sombras suaves */
+    margin-bottom: 20px;
+}
+
+/* Separadores de sección */
+/* Separadores de sección con prioridad */
+.section-title {
+    background: #e63946 !important; /* Fondo rojo intenso */
+    color: #ffffff !important; /* Texto negro forzado */
+    font-size: 20px !important; /* Tamaño de fuente */
+    font-weight: bold !important; /* Negrita */
+    text-align: center !important; /* Centrado */
+    padding: 12px !important; /* Espaciado interno */
+    border-radius: 10px !important; /* Bordes redondeados */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.15) !important; /* Sombra */
+    margin-bottom: 20px !important; /* Margen inferior */
+    text-transform: uppercase !important; /* Texto en mayúsculas */
+}
+
+/* Reseteo de colores heredados */
+body, div, p, span, label, h1, h2, h3, h4, h5, h6 {
+    color: inherit !important; /* Hereda el color correctamente */
+}
+
+/* Forzar texto negro global */
+* {
+    color: #000000 !important; /* Asegurar texto negro en cualquier elemento */
+}
+
+/* Fondo blanco para cualquier interferencia */
+.section-title * {
+    background-color: transparent !important; /* Fondo transparente dentro de la sección */
+}
+
+
+/* Entradas de texto y áreas */
+input, textarea {
+    background-color: #ffffff !important; /* Fondo blanco asegurado */
+    color: #000000 !important; /* Texto negro garantizado */
+    border: 2px solid #e63946 !important; /* Borde rojo */
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+input:focus, textarea:focus {
+    outline: none !important;
+    border: 2px solid #c22834 !important;
+    box-shadow: 0px 0px 5px rgba(226, 57, 70, 0.5);
+}
+
+/* Botones */
+.stButton>button {
+    background-color: #e63946 !important; /* Fondo rojo */
+    color: white !important; /* Texto blanco */
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    margin-top: 5px;
+    width: 100%;
 }
-.add-button:hover {
-    background-color: #c22834 !important;
-    transform: scale(1.05); /* Zoom */
+.stButton>button:hover {
+    background-color: #c22834 !important; /* Fondo rojo más oscuro */
+    transform: scale(1.05); /* Efecto de zoom */
     box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Ajuste responsivo para móviles */
+/* Tarjetas de productos */
+.stColumn > div {
+    background-color: #ffffff; /* Fondo blanco */
+    color: #000000 !important; /* Texto negro */
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.stColumn > div:hover {
+    transform: scale(1.03);
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Mensajes de éxito */
+.stSuccess {
+    background-color: #d4edda !important; /* Verde claro */
+    border-left: 5px solid #28a745 !important;
+    color: #155724 !important; /* Texto verde oscuro */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* Ocultar header y footer innecesarios */
+header, footer {
+    visibility: hidden;
+}
+
+/* Responsividad */
 @media only screen and (max-width: 768px) {
-    .product-container {
-        flex-direction: row; /* Mantiene horizontal los productos */
-        align-items: center;
+    .section-title {
+        font-size: 18px;
+        padding: 10px;
     }
-    .product-info {
-        font-size: 14px; /* Texto más compacto */
+    input, textarea {
+        font-size: 14px;
+        padding: 10px;
     }
-    .add-button {
-        font-size: 12px; /* Botón más pequeño */
-        padding: 6px;
+    .stButton>button {
+        font-size: 14px;
+        padding: 8px;
     }
 }
 </style>
