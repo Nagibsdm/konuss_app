@@ -76,7 +76,7 @@ st.markdown("""
 <style>
 /* Fondo general */
 .stApp {
-    background: linear-gradient(to bottom, #ffe6e6, #ffffff);
+    background: #ffffff;
     font-family: 'Poppins', sans-serif;
     color: #000000 !important; /* Texto negro */
     padding: 20px;
@@ -86,7 +86,6 @@ st.markdown("""
 h1, h2, h3 {
     color: #000000 !important; /* Texto negro */
     text-align: center;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15); /* Sombra suave */
     margin-bottom: 20px;
     font-weight: bold;
 }
@@ -99,8 +98,7 @@ h1, h2, h3 {
     font-weight: bold;
     text-align: center;
     padding: 12px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
     margin: 20px 0;
 }
 
@@ -112,12 +110,6 @@ div[data-testid="stSuccess"] {
     padding: 15px;
     margin-bottom: 15px;
     border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-    font-size: 16px;
-}
-
-div[data-testid="stSuccess"] p {
-    color: #000000 !important;
 }
 
 /* Botones */
@@ -128,8 +120,6 @@ div[data-testid="stSuccess"] p {
     padding: 12px 18px;
     font-size: 16px;
     border: none;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
     width: 100%; /* Ancho completo para botones */
     margin-top: 10px;
@@ -137,8 +127,6 @@ div[data-testid="stSuccess"] p {
 
 .stButton > button:hover {
     background-color: #c22834; /* Más oscuro al pasar el mouse */
-    transform: scale(1.05); /* Efecto de zoom */
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 /* Entrada de texto */
@@ -156,8 +144,7 @@ input, textarea {
 
 input:focus, textarea:focus {
     outline: none !important;
-    border: 2px solid #c22834 !important;
-    box-shadow: 0px 0px 5px rgba(226, 57, 70, 0.5) !important;
+    border-color: #c22834 !important;
 }
 
 /* Asegurando que todo el texto de la sección "Datos del pedido" sea negro */
@@ -188,8 +175,6 @@ hr {
     }
 }
 </style>
-
-
 """, unsafe_allow_html=True)
 
 # Encabezado
