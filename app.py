@@ -78,7 +78,7 @@ st.markdown("""
 .stApp {
     background: linear-gradient(to bottom, #ffe6e6, #ffffff); /* Fondo suave con gradiente */
     font-family: 'Poppins', sans-serif;
-    color: #333333 !important; /* Texto en gris oscuro */
+    color: #333333 !important; /* Texto predeterminado en gris oscuro */
     padding: 10px;
 }
 
@@ -86,7 +86,7 @@ st.markdown("""
 h1, h2, h3 {
     color: #e63946 !important; /* Rojo elegante */
     text-align: center;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombras suaves */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra suave */
     margin-bottom: 20px;
 }
 
@@ -155,6 +155,11 @@ input:focus, textarea:focus {
     box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Texto negro sobre fondos verdes */
+div[style*="background-color:#28a745"] * { /* Detecta fondo verde */
+    color: #000000 !important; /* Fuerza texto negro */
+}
+
 /* Mensajes de éxito */
 .stSuccess {
     background-color: #d4edda !important; /* Verde claro */
@@ -165,7 +170,7 @@ input:focus, textarea:focus {
     border-radius: 5px;
 }
 
-/* Footer y header ocultos */
+/* Ocultar header y footer innecesarios */
 header, footer {
     visibility: hidden;
 }
@@ -176,19 +181,17 @@ header, footer {
         font-size: 18px; /* Texto más pequeño para móviles */
         padding: 8px;
     }
-    .stButton>button {
+    input, textarea {
         font-size: 14px;
         padding: 8px;
     }
-    input, textarea {
+    .stButton>button {
         font-size: 14px;
         padding: 8px;
     }
 }
 </style>
 """, unsafe_allow_html=True)
-
-
 
 # Encabezado
 st.markdown("<h1 class='header'>🍕 Konuss -¡Ahora la pizza se come en cono!🎉</h1>", unsafe_allow_html=True)
