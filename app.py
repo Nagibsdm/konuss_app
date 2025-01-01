@@ -71,8 +71,7 @@ def send_order_email(order_id, cart, customer_name, customer_phone, customer_add
     except Exception as e:
         st.error(f"❌ Error al enviar el correo: {e}")
 
-# Estilo CSS simplificado
-# Estilo CSS mejorado
+# Estilo CSS mejorado con separadores
 st.markdown("""
 <style>
 /* Fondo general */
@@ -89,6 +88,19 @@ h1, h2, h3 {
     text-align: center;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15); /* Sombra suave */
     margin-bottom: 20px;
+}
+
+/* Separadores de sección */
+.section-title {
+    background: #e63946;
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
 }
 
 /* Mensajes de éxito */
@@ -148,6 +160,13 @@ input:focus, textarea:focus {
     box-shadow: 0px 0px 5px rgba(226, 57, 70, 0.5) !important;
 }
 
+/* Separador adicional */
+hr {
+    border: 0;
+    border-top: 2px solid #e63946; /* Línea roja */
+    margin: 20px 0;
+}
+
 /* Estilo responsive para móviles */
 @media only screen and (max-width: 768px) {
     .section-title {
@@ -165,6 +184,7 @@ input:focus, textarea:focus {
 }
 </style>
 """, unsafe_allow_html=True)
+
 
 
 # Encabezado
