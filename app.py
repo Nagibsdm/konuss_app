@@ -72,6 +72,7 @@ def send_order_email(order_id, cart, customer_name, customer_phone, customer_add
         st.error(f"❌ Error al enviar el correo: {e}")
 
 # Estilo CSS actualizado
+# Estilo CSS actualizado
 st.markdown("""
 <style>
 /* Fondo general */
@@ -160,16 +161,15 @@ div[style*="background-color:##d4edda"] * { /* Detecta fondo verde */
     color: #000000 !important; /* Fuerza texto negro */
 }
 
-/* Apuntar a los mensajes de éxito específicos usando la clase interna de Streamlit */
-div[data-testid="stMarkdownContainer"] .stSuccess {
+/* Mensajes de éxito */
+.stSuccess {
     background-color: #d4edda !important; /* Verde claro */
     border-left: 5px solid #28a745 !important;
-    color: #000000 !important; /* Forzar texto negro */
+    color: #000000 !important; /* Asegúrate de que el color sea negro */
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
 }
-
 
 /* Ocultar header y footer innecesarios */
 header, footer {
@@ -192,6 +192,18 @@ header, footer {
     }
 }
 </style>
+""", unsafe_allow_html=True)
+
+# Inyectar JavaScript para forzar color negro en los mensajes de éxito
+st.markdown("""
+<script>
+    window.onload = function() {
+        var successMessages = document.querySelectorAll('.st-success');
+        successMessages.forEach(function(message) {
+            message.style.color = 'black';  // Cambiar color de texto a negro
+        });
+    }
+</script>
 """, unsafe_allow_html=True)
 
 # Encabezado
