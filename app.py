@@ -100,7 +100,7 @@ h1, h2, h3 {
 /* Separadores de sección con prioridad */
 .section-title {
     background: #e63946 !important; /* Fondo rojo intenso */
-    color: #000000 !important; /* Texto negro forzado */
+    color: #ffffff !important; /* Texto negro forzado */
     font-size: 20px !important; /* Tamaño de fuente */
     font-weight: bold !important; /* Negrita */
     text-align: center !important; /* Centrado */
