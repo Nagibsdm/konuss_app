@@ -210,6 +210,60 @@ header, footer {
         padding: 8px;
     }
 }
+
+            /* Alinear los elementos de los productos horizontalmente */
+.product-container {
+    display: flex; /* Disposición en fila */
+    align-items: center; /* Centrado vertical */
+    justify-content: space-between; /* Espaciado entre texto y botón */
+    background-color: #ffffff; /* Fondo blanco */
+    color: #000000; /* Texto negro */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 15px; /* Espaciado entre productos */
+}
+
+/* Ajustar el texto del producto */
+.product-info {
+    flex: 3; /* Toma el 70% del espacio horizontal */
+    text-align: left; /* Alineación a la izquierda */
+}
+
+/* Botón "Añadir" */
+.add-button {
+    flex: 1; /* Toma el 30% del espacio horizontal */
+    background-color: #e63946; /* Fondo rojo */
+    color: white; /* Texto blanco */
+    border: none;
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 8px 10px; /* Espaciado interno */
+    font-size: 14px; /* Texto tamaño medio */
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.add-button:hover {
+    background-color: #c22834; /* Fondo rojo oscuro */
+    transform: scale(1.05); /* Zoom ligero al pasar */
+}
+
+/* Ajuste responsivo para móviles */
+@media only screen and (max-width: 768px) {
+    .product-container {
+        flex-direction: row; /* Mantener disposición horizontal */
+        padding: 8px; /* Reducir el espaciado interno */
+    }
+    .product-info {
+        font-size: 14px; /* Texto más pequeño */
+    }
+    .add-button {
+        font-size: 12px; /* Botón más pequeño */
+        padding: 6px; /* Espaciado menor */
+    }
+}
+
 </style>
 """, unsafe_allow_html=True)
 
