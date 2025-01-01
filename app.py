@@ -122,9 +122,9 @@ input:focus, textarea:focus {
 .stButton>button {
     background-color: #e63946; /* Fondo rojo */
     color: white; /* Texto blanco */
-    border-radius: 10px;
-    padding: 8px; /* Ajuste de tamaño */
-    font-size: 14px; /* Tamaño reducido para pantallas pequeñas */
+    border-radius: 8px; /* Botón ligeramente redondeado */
+    padding: 6px; /* Altura del botón ajustada */
+    font-size: 12px; /* Fuente más pequeña */
     width: 100%; /* Botones a ancho completo */
     border: none;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
@@ -149,8 +149,8 @@ header, footer {
         padding: 6px; /* Padding menor */
     }
     .stButton>button {
-        font-size: 12px; /* Reducir tamaño del botón */
-        padding: 6px; /* Botones más compactos */
+        font-size: 11px; /* Reducir tamaño del botón */
+        padding: 5px; /* Botones más compactos */
     }
     .stApp {
         padding: 5px; /* Reducir márgenes generales */
