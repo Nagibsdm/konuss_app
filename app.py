@@ -73,7 +73,7 @@ def send_order_email(order_id, cart, customer_name, customer_phone, customer_add
 
 st.markdown("""
 <style>
-/* Fondo principal claro */
+/* Fondo general */
 .stApp {
     background: linear-gradient(to bottom, #fdf5f5, #ffffff); /* Fondo suave */
     font-family: 'Poppins', sans-serif;
@@ -81,7 +81,7 @@ st.markdown("""
     padding: 10px;
 }
 
-/* Texto general: Garantía de color negro */
+/* Texto general */
 body, div, p, span, label, h1, h2, h3, h4, h5, h6, textarea, input, button {
     color: #000000 !important; /* Texto negro forzado */
     background-color: transparent !important; /* Fondo transparente por defecto */
@@ -90,7 +90,7 @@ body, div, p, span, label, h1, h2, h3, h4, h5, h6, textarea, input, button {
 
 /* Títulos principales */
 h1, h2, h3 {
-    color: #e63946 !important; /* Rojo elegante para títulos */
+    color: #e63946 !important; /* Títulos en rojo elegante */
     text-align: center;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Sombras suaves */
     margin-bottom: 20px;
@@ -195,7 +195,6 @@ header, footer {
 }
 </style>
 """, unsafe_allow_html=True)
-
 
 
 # Encabezado
