@@ -263,15 +263,15 @@ else:
 st.markdown("""
 ### Métodos de Pago 💳
 1. **PagoMovil:**  
-   - C.I: 8342252  
+   - C.I: 8.342.252  
    - Teléfono: 0424-8943749  
    - Banco: Banesco  
 2. **Zelle:**  
    - Correo: Dimellamaite@hotmail.com  
 3. **Efectivo/Tarjeta:**  
-   - Contactar al WhatsApp: +58 123-456-7890 para confirmar el método de pago.  
+   - Contactar al WhatsApp: +58 0424-8943749 para confirmar el método de pago.  
 
-**Nota:** La orden se procesará una vez que el pago sea confirmado.
+**Nota:La orden se procesará una vez que el pago sea confirmado.**
 """)
 
 # Sección Datos del Cliente
