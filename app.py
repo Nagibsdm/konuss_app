@@ -88,6 +88,7 @@ h1, h2, h3 {
     text-align: center;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.15); /* Sombra suave */
     margin-bottom: 20px;
+    font-weight: bold;
 }
 
 /* Separadores de sección */
@@ -115,7 +116,6 @@ div[data-testid="stSuccess"] {
     font-size: 16px;
 }
 
-/* Asegurar que el texto dentro de los mensajes de éxito sea negro */
 div[data-testid="stSuccess"] p {
     color: #000000 !important;
 }
@@ -188,6 +188,7 @@ hr {
     }
 }
 </style>
+
 """, unsafe_allow_html=True)
 
 # Encabezado
