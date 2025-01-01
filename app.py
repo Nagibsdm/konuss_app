@@ -79,24 +79,26 @@ st.markdown("""
     background: linear-gradient(to bottom, #f9f9f9, #ffffff);
     font-family: 'Poppins', sans-serif;
     color: #000000 !important; /* Texto negro predeterminado */
+    padding: 10px; /* Espaciado interno para pantallas más pequeñas */
 }
 
-/* Estilo para texto general */
+/* Texto general */
 body, div, p, span, label, h1, h2, h3, h4, h5, h6 {
     color: #000000 !important; /* Forzar texto negro */
+    margin: 0; /* Reducir márgenes para mejor ajuste */
 }
 
 /* Estilo para separadores de sección */
 .section-title {
     background-color: #e63946; /* Fondo rojo */
     color: white; /* Texto blanco */
-    font-size: 20px;
+    font-size: 18px; /* Ajuste de tamaño de fuente para pantallas pequeñas */
     font-weight: bold;
     text-align: center;
-    padding: 12px;
-    border-radius: 12px;
-    margin-bottom: 20px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 8px; /* Reducción de padding */
+    border-radius: 10px;
+    margin-bottom: 15px; /* Espaciado menor */
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Entradas de texto y áreas */
@@ -105,8 +107,10 @@ input, textarea {
     color: #000000 !important; /* Texto negro */
     border: 2px solid #e63946 !important; /* Borde rojo */
     border-radius: 8px !important; /* Bordes redondeados */
-    padding: 10px !important;
-    font-size: 16px !important;
+    padding: 8px !important; /* Reducción de padding */
+    font-size: 14px !important; /* Ajuste de fuente */
+    width: 100%; /* Asegura que ocupe el ancho completo */
+    box-sizing: border-box; /* Previene desbordamiento horizontal */
 }
 input:focus, textarea:focus {
     outline: none !important;
@@ -119,10 +123,11 @@ input:focus, textarea:focus {
     background-color: #e63946; /* Fondo rojo */
     color: white; /* Texto blanco */
     border-radius: 10px;
-    padding: 10px;
-    font-size: 16px;
+    padding: 8px; /* Ajuste de tamaño */
+    font-size: 14px; /* Tamaño reducido para pantallas pequeñas */
+    width: 100%; /* Botones a ancho completo */
     border: none;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1);
 }
 .stButton>button:hover {
     background-color: #c22834; /* Cambio de color al pasar el mouse */
@@ -133,14 +138,23 @@ header, footer {
     visibility: hidden;
 }
 
-/* Texto sobre fondos verdes */
-div[style*="background-color:#28a745"] * {
-    color: #000000 !important; /* Asegura texto negro */
-}
-
-/* Texto sobre cualquier fondo blanco */
-div[style*="background-color:#ffffff"] * {
-    color: #000000 !important; /* Texto negro */
+/* Optimización para pantallas pequeñas */
+@media only screen and (max-width: 768px) {
+    .section-title {
+        font-size: 16px; /* Texto más pequeño para móviles */
+        padding: 6px; /* Menos padding */
+    }
+    input, textarea {
+        font-size: 12px; /* Reducir tamaño de fuente */
+        padding: 6px; /* Padding menor */
+    }
+    .stButton>button {
+        font-size: 12px; /* Reducir tamaño del botón */
+        padding: 6px; /* Botones más compactos */
+    }
+    .stApp {
+        padding: 5px; /* Reducir márgenes generales */
+    }
 }
 </style>
 """, unsafe_allow_html=True)
