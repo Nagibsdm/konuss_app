@@ -72,98 +72,116 @@ def send_order_email(order_id, cart, customer_name, customer_phone, customer_add
         st.error(f"❌ Error al enviar el correo: {e}")
 
 # Estilo CSS mejorado para forzar el color negro en "Datos del pedido"
+# Estilo CSS minimalista y elegante
 st.markdown("""
 <style>
 /* Fondo general */
 .stApp {
-    background: #ffffff;
+    background: #f7f7f7; /* Fondo claro y limpio */
     font-family: 'Poppins', sans-serif;
-    color: #000000 !important; /* Texto negro */
-    padding: 20px;
+    color: #333333 !important; /* Texto oscuro por defecto */
+    padding: 30px;
 }
 
 /* Títulos principales */
 h1, h2, h3 {
-    color: #000000 !important; /* Texto negro */
+    color: #333333 !important; /* Texto oscuro para títulos */
     text-align: center;
+    font-weight: 600; /* Asegurar que los títulos se vean bien */
     margin-bottom: 20px;
-    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Espaciado en letras */
 }
 
 /* Separadores de sección */
 .section-title {
-    background: #e63946;
-    color: white;
+    background: transparent;
+    color: #333333;
     font-size: 22px;
-    font-weight: bold;
+    font-weight: 500;
     text-align: center;
-    padding: 12px;
+    padding: 12px 20px;
+    border: 1px solid #333333;
     border-radius: 8px;
     margin: 20px 0;
+    display: inline-block;
 }
 
 /* Mensajes de éxito */
 div[data-testid="stSuccess"] {
-    background-color: #d4edda !important; /* Verde claro */
-    border-left: 5px solid #28a745 !important; /* Borde verde */
-    color: #000000 !important; /* Texto negro */
-    padding: 15px;
+    background-color: #e8f5e9; /* Verde muy suave */
+    border-left: 4px solid #4caf50; /* Borde verde */
+    color: #000000 !important; /* Forzar texto negro */
+    padding: 12px;
     margin-bottom: 15px;
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    font-size: 16px;
+    font-weight: 400;
 }
 
-/* Botones */
+/* Asegurar que el texto dentro de los mensajes de éxito sea negro */
+div[data-testid="stSuccess"] p {
+    color: #000000 !important;
+}
+
+/* Estilo de botones */
 .stButton > button {
-    background-color: #e63946; /* Fondo rojo */
+    background-color: #333333; /* Fondo oscuro */
     color: white; /* Texto blanco */
     border-radius: 8px;
     padding: 12px 18px;
     font-size: 16px;
     border: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
-    width: 100%; /* Ancho completo para botones */
+    width: 100%;
     margin-top: 10px;
 }
 
 .stButton > button:hover {
-    background-color: #c22834; /* Más oscuro al pasar el mouse */
+    background-color: #555555; /* Fondo más oscuro al pasar el mouse */
+    transform: scale(1.05);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Entrada de texto */
+/* Entradas de texto */
 input, textarea {
-    background-color: #ffffff !important;
-    color: #000000 !important; /* Texto negro */
-    border: 2px solid #e63946 !important; /* Borde rojo */
+    background-color: #ffffff !important; /* Fondo blanco */
+    color: #333333 !important; /* Texto negro */
+    border: 1px solid #e0e0e0 !important; /* Borde gris claro */
     border-radius: 8px !important;
     padding: 12px;
     font-size: 16px;
     width: 100%;
     box-sizing: border-box;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 input:focus, textarea:focus {
     outline: none !important;
-    border-color: #c22834 !important;
+    border: 1px solid #4caf50 !important; /* Borde verde */
+    box-shadow: 0px 0px 5px rgba(76, 175, 80, 0.2) !important; /* Sombra verde suave */
 }
 
 /* Asegurando que todo el texto de la sección "Datos del pedido" sea negro */
 #datos-pedido, #datos-pedido * {
-    color: #000000 !important; /* Forzar texto negro en todo */
+    color: #000000 !important; /* Forzar texto negro */
 }
 
 /* Separador adicional */
 hr {
     border: 0;
-    border-top: 2px solid #e63946; /* Línea roja */
+    border-top: 2px solid #e0e0e0; /* Línea gris */
     margin: 20px 0;
 }
 
 /* Estilo responsive para móviles */
 @media only screen and (max-width: 768px) {
     .section-title {
-        font-size: 18px; /* Texto más pequeño para móviles */
-        padding: 8px;
+        font-size: 18px;
+        padding: 8px 15px;
     }
     input, textarea {
         font-size: 14px;
@@ -176,6 +194,7 @@ hr {
 }
 </style>
 """, unsafe_allow_html=True)
+
 
 # Encabezado
 st.markdown("<h1 class='header'>🍕 Konuss -¡Ahora la pizza se come en cono!🎉</h1>", unsafe_allow_html=True)
