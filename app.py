@@ -210,8 +210,9 @@ header, footer {
         font-size: 14px;
         padding: 8px;
     }
-/* Estilo para el contenedor del dropdown */
-.css-16huue1, .stSelectbox, [data-baseweb="select"] {
+
+/* Contenedor principal del dropdown */
+.stSelectbox {
     background-color: #e63946 !important; /* Fondo rojo */
     color: #ffffff !important; /* Texto blanco */
     border: 2px solid #e63946 !important; /* Borde rojo */
@@ -220,26 +221,44 @@ header, footer {
     padding: 8px !important;
 }
 
-/* Fondo del menú desplegable */
+/* Opciones del menú desplegable */
 [data-baseweb="menu"] {
     background-color: #e63946 !important; /* Fondo rojo */
     color: #ffffff !important; /* Texto blanco */
     border: none !important;
 }
 
-/* Opciones del menú desplegable */
+/* Texto de las opciones */
 [data-baseweb="menu"] div {
     background-color: #e63946 !important; /* Fondo rojo */
     color: #ffffff !important; /* Texto blanco */
     font-size: 14px !important;
     padding: 10px !important;
+    border-radius: 4px !important;
 }
 
-/* Opciones al pasar el cursor */
+/* Hover en las opciones */
 [data-baseweb="menu"] div:hover {
     background-color: #c22834 !important; /* Fondo rojo oscuro */
     color: #ffffff !important; /* Texto blanco */
 }
+
+/* Asegurar el color del texto */
+.css-1wa3eu0-placeholder {
+    color: #ffffff !important; /* Texto blanco en el placeholder */
+}
+
+/* Asegurar colores al escribir en el campo */
+.css-2b097c-container {
+    background-color: #e63946 !important; /* Fondo rojo */
+    color: #ffffff !important; /* Texto blanco */
+}
+
+/* Forzar texto blanco en el dropdown desplegado */
+.css-qxbz0x {
+    color: #ffffff !important; /* Texto blanco */
+}
+
   
 </style>
 """, unsafe_allow_html=True)
