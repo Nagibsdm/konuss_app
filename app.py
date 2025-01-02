@@ -291,6 +291,7 @@ if st.button("Confirmar Pedido ✅"):
             customer_name,
             customer_phone,
             customer_address
+            payment_reference=
         )
         st.success(
     f"🎉 Tu pedido ha sido realizado exitosamente. Tu número de orden es {st.session_state['order_id']}. "
