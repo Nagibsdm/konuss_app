@@ -21,6 +21,8 @@ if "order_id" not in st.session_state:
     st.session_state["order_id"] = None
 if "total" not in st.session_state:
     st.session_state["total"] = 0.0
+if "delivery_cost" not in st.session_state:
+    st.session_state["delivery_cost"] = 0.0
 
 # Catálogo de productos
 products = [
@@ -35,8 +37,23 @@ products = [
 def generate_order_id():
     return f"KON-{random.randint(1000, 9999)}"
 
+# Opciones de delivery
+st.markdown("<div class='section-title'>🚚 Delivery</div>", unsafe_allow_html=True)
+delivery_option = st.selectbox(
+    "Seleccione la ubicación para el delivery:",
+    ["Lechería (Gratis)", "Puerto La Cruz ($0.5)", "Barcelona ($2.0)"]
+)
+
+# Determinar el costo del delivery
+if delivery_option == "Puerto La Cruz ($0.5)":
+    st.session_state["delivery_cost"] = 0.5
+elif delivery_option == "Barcelona ($2.0)":
+    st.session_state["delivery_cost"] = 2.0
+else:
+    st.session_state["delivery_cost"] = 0.0
+
 # Función para enviar el pedido por correo
-def send_order_email(order_id, cart, customer_name, customer_phone, customer_address, payment_reference):
+def send_order_email(order_id, cart, customer_name, customer_phone, customer_address, payment_reference, delivery_option, delivery_cost):
     subject = f"Nuevo Pedido - {order_id}"
     body = f"""
     Nuevo Pedido Realizado:
@@ -47,9 +64,11 @@ def send_order_email(order_id, cart, customer_name, customer_phone, customer_add
     Dirección: {customer_address}
     Referencia: {payment_reference}
 
+    Delivery: {delivery_option} (${delivery_cost:.2f})
+
     Detalles del Pedido:
     """
-    total = 0
+    total = delivery_cost
     for product_name, quantity in cart.items():
         product = next((p for p in products if p["name"] == product_name), None)
         if product and quantity > 0:
@@ -98,10 +117,9 @@ h1, h2, h3 {
 }
 
 /* Separadores de sección */
-/* Separadores de sección con prioridad */
 .section-title {
     background: #e63946 !important; /* Fondo rojo intenso */
-    color: #ffffff !important; /* Texto negro forzado */
+    color: #ffffff !important; /* Texto blanco */
     font-size: 20px !important; /* Tamaño de fuente */
     font-weight: bold !important; /* Negrita */
     text-align: center !important; /* Centrado */
@@ -112,23 +130,7 @@ h1, h2, h3 {
     text-transform: uppercase !important; /* Texto en mayúsculas */
 }
 
-/* Reseteo de colores heredados */
-body, div, p, span, label, h1, h2, h3, h4, h5, h6 {
-    color: inherit !important; /* Hereda el color correctamente */
-}
-
-/* Forzar texto negro global */
-* {
-    color: #000000 !important; /* Asegurar texto negro en cualquier elemento */
-}
-
-/* Fondo blanco para cualquier interferencia */
-.section-title * {
-    background-color: transparent !important; /* Fondo transparente dentro de la sección */
-}
-
-
-/* Entradas de texto y áreas */
+/* Campos de entrada */
 input, textarea {
     background-color: #ffffff !important; /* Fondo blanco asegurado */
     color: #000000 !important; /* Texto negro garantizado */
@@ -145,79 +147,11 @@ input:focus, textarea:focus {
     border: 2px solid #c22834 !important;
     box-shadow: 0px 0px 5px rgba(226, 57, 70, 0.5);
 }
-
-/* Botones */
-.stButton>button {
-    background-color: #e63946 !important; /* Fondo rojo */
-    color: white !important; /* Texto blanco */
-    border-radius: 8px;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: none;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    cursor: pointer;
-    margin-top: 5px;
-    width: 100%;
-}
-.stButton>button:hover {
-    background-color: #c22834 !important; /* Fondo rojo más oscuro */
-    transform: scale(1.05); /* Efecto de zoom */
-    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
-}
-
-/* Tarjetas de productos */
-.stColumn > div {
-    background-color: #ffffff; /* Fondo blanco */
-    color: #000000 !important; /* Texto negro */
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    margin-bottom: 20px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.stColumn > div:hover {
-    transform: scale(1.03);
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* Mensajes de éxito */
-.stSuccess {
-    background-color: #d4edda !important; /* Verde claro */
-    border-left: 5px solid #28a745 !important;
-    color: #155724 !important; /* Texto verde oscuro */
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 5px;
-}
-
-/* Ocultar header y footer innecesarios */
-header, footer {
-    visibility: hidden;
-}
-
-/* Responsividad */
-@media only screen and (max-width: 768px) {
-    .section-title {
-        font-size: 18px;
-        padding: 10px;
-    }
-    input, textarea {
-        font-size: 14px;
-        padding: 10px;
-    }
-    .stButton>button {
-        font-size: 14px;
-        padding: 8px;
-    }
-}
 </style>
 """, unsafe_allow_html=True)
 
-
 # Encabezado
 st.markdown("<h1 class='header'>🍕 Konuss -¡Ahora la pizza se come en cono!🎉</h1>", unsafe_allow_html=True)
-
 # Sección Menú
 st.markdown("<div class='section-title'>📋 Menú</div>", unsafe_allow_html=True)
 for product in products:
@@ -230,35 +164,23 @@ for product in products:
             st.session_state["quantities"][product["name"]] += 1
             st.success(f"🎉 ¡{product['name']} añadido al carrito!")
 
-
 # Sección Carrito
 st.markdown("<div class='section-title'>🛒 Tu carrito</div>", unsafe_allow_html=True)
 if any(quantity > 0 for quantity in st.session_state["quantities"].values()):
-    st.session_state["total"] = 0
+    st.session_state["total"] = st.session_state["delivery_cost"]  # Inicia con el costo del delivery
+    st.write(f"**Delivery: {delivery_option} - ${st.session_state['delivery_cost']:.2f}**")
+
     for product_name, quantity in st.session_state["quantities"].items():
         if quantity > 0:
             product = next((p for p in products if p["name"] == product_name), None)
             if product:
-                col1, col2, col3 = st.columns([2, 2, 1])
-                with col1:
-                    st.write(f"**{product_name}** - ${product['price']:.2f} c/u")
-                with col2:
-                    new_quantity = st.number_input(
-                        f"Cantidad ({product_name})",
-                        min_value=0,
-                        max_value=100,
-                        value=quantity,
-                        step=1,
-                        key=f"quantity_{product_name}"
-                    )
-                    st.session_state["quantities"][product_name] = new_quantity
-                with col3:
-                    subtotal = product['price'] * new_quantity
-                    st.session_state["total"] += subtotal
-                    st.write(f"${subtotal:.2f}")
+                subtotal = product["price"] * quantity
+                st.session_state["total"] += subtotal
+                st.write(f"- {product_name}: {quantity} x ${product['price']:.2f} = ${subtotal:.2f}")
+
     st.write(f"### Total: ${st.session_state['total']:.2f} 💵")
 else:
-    st.write("¡Tu carrito está vacío! 😢")
+    st.write("¡Tu carrito está vacío! 😥")
 
 # Métodos de Pago
 st.markdown("""
@@ -272,12 +194,12 @@ st.markdown("""
 3. **Efectivo/Tarjeta:**  
    - Contactar al WhatsApp: +58 0424-8943749 para confirmar el método de pago.  
 
-**⚠️Nota: La orden sera procesada una vez el pago haya sido confirmado ⚠️**
+**⚠️Nota: La orden será procesada una vez el pago haya sido confirmado ⚠️**
 """)
 
 # Sección Datos del Cliente
 st.markdown("<div class='section-title'>🚀 Datos del pedido</div>", unsafe_allow_html=True)
-customer_name = st.text_input("📝 Nombre Completo")
+customer_name = st.text_input("🖍 Nombre Completo")
 customer_phone = st.text_input("📞 Teléfono")
 customer_address = st.text_area("📍 Dirección")
 payment_reference = st.text_input("💳 Últimos 6 dígitos de referencia bancaria del pago")
@@ -291,13 +213,14 @@ if st.button("Confirmar Pedido ✅"):
             customer_name,
             customer_phone,
             customer_address,
-            payment_reference
+            payment_reference,
+            delivery_option,
+            st.session_state["delivery_cost"]
         )
         st.success(
-    f"🎉 Tu pedido ha sido realizado exitosamente. Tu número de orden es {st.session_state['order_id']}. "
-    f"Por favor, comparte el comprobante de pago con el número de referencia **{payment_reference}** "
-    f"al Whatsapp +58 0424-8943749 o al e-mail konussfactory@gmail.com. **⚠️ El pedido será enviado una vez confirmado el pago. ⚠️**"
-)
-
+            f"🎉 Tu pedido ha sido realizado exitosamente. Tu número de orden es {st.session_state['order_id']}. "
+            f"Por favor, comparte el comprobante de pago con el número de referencia **{payment_reference}** "
+            f"al Whatsapp +58 0424-8943749 o al e-mail konussfactory@gmail.com. **⚠️ El pedido será enviado una vez confirmado el pago. ⚠️**"
+        )
     else:
         st.error("⚠️ Por favor, completa todos los campos.")
