@@ -210,7 +210,22 @@ header, footer {
         font-size: 14px;
         padding: 8px;
     }
+/* Estilo para el Dropdown */
+.css-16huue1, .stSelectbox {
+    background-color: #ffffff !important; /* Fondo blanco */
+    color: #000000 !important; /* Texto negro */
+    border: 2px solid #e63946 !important; /* Borde rojo */
+    border-radius: 8px !important;
+    font-size: 16px !important;
+    padding: 8px !important;
 }
+
+/* Cambiar el color del menú desplegable */
+.css-11if0fu {
+    background-color: #ffffff !important; /* Fondo blanco */
+    color: #000000 !important; /* Texto negro */
+}
+            
 </style>
 """, unsafe_allow_html=True)
 
