@@ -212,8 +212,8 @@ header, footer {
     }
 /* Estilo para el Dropdown */
 .css-16huue1, .stSelectbox {
-    background-color: #ffffff !important; /* Fondo blanco */
-    color: #000000 !important; /* Texto negro */
+    background-color: #e63946 !important; /* Fondo rojo */
+    color: #ffffff !important; /* Texto blanco */
     border: 2px solid #e63946 !important; /* Borde rojo */
     border-radius: 8px !important;
     font-size: 16px !important;
@@ -222,17 +222,17 @@ header, footer {
 
 /* Cambiar el color del menú desplegable */
 [data-baseweb="select"] {
-    background-color: #ffffff !important; /* Fondo blanco */
-    color: #000000 !important; /* Texto negro */
+    background-color: #e63946 !important; /* Fondo rojo */
+    color: #ffffff !important; /* Texto blanco */
 }
 
 /* Ajustar las opciones dentro del menú */
 [data-baseweb="menu"] {
-    background-color: #ffffff !important; /* Fondo blanco */
+    background-color: #e63946 !important; /* Fondo rojo */
 }
 
 [data-baseweb="menu"] div {
-    color: #000000 !important; /* Texto negro */
+    color: #ffffff !important; /* Texto blanco */
 }
 
             
