@@ -296,7 +296,7 @@ if st.button("Confirmar Pedido ✅"):
         st.success(
     f"🎉 Tu pedido ha sido realizado exitosamente. Tu número de orden es {st.session_state['order_id']}. "
     f"Por favor, comparte el comprobante de pago con el número de referencia **{payment_reference}** "
-    f"al Whatsapp +58 0424-8943749 o al e-mail konussfactory@gmail.com. ⚠️ El pedido será enviado una vez confirmado el pago. ⚠️"
+    f"al Whatsapp +58 0424-8943749 o al e-mail konussfactory@gmail.com. **⚠️ El pedido será enviado una vez confirmado el pago. ⚠️**"
 )
 
     else:
