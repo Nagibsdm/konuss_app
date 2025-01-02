@@ -221,10 +221,20 @@ header, footer {
 }
 
 /* Cambiar el color del menú desplegable */
-.css-11if0fu {
+[data-baseweb="select"] {
     background-color: #ffffff !important; /* Fondo blanco */
     color: #000000 !important; /* Texto negro */
 }
+
+/* Ajustar las opciones dentro del menú */
+[data-baseweb="menu"] {
+    background-color: #ffffff !important; /* Fondo blanco */
+}
+
+[data-baseweb="menu"] div {
+    color: #000000 !important; /* Texto negro */
+}
+
             
 </style>
 """, unsafe_allow_html=True)
