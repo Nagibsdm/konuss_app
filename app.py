@@ -290,7 +290,7 @@ if st.button("Confirmar Pedido ✅"):
             st.session_state["quantities"],
             customer_name,
             customer_phone,
-            customer_address
+            customer_address,
             payment_reference
         )
         st.success(
