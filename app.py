@@ -36,7 +36,7 @@ def generate_order_id():
     return f"KON-{random.randint(1000, 9999)}"
 
 # Función para enviar el pedido por correo
-def send_order_email(order_id, cart, customer_name, customer_phone, customer_address):
+def send_order_email(order_id, cart, customer_name, customer_phone, customer_address, payment_reference):
     subject = f"Nuevo Pedido - {order_id}"
     body = f"""
     Nuevo Pedido Realizado:
@@ -45,6 +45,7 @@ def send_order_email(order_id, cart, customer_name, customer_phone, customer_add
     Cliente: {customer_name}
     Teléfono: {customer_phone}
     Dirección: {customer_address}
+    Referencia: {payment_reference}
 
     Detalles del Pedido:
     """
@@ -278,10 +279,11 @@ st.markdown("""
 st.markdown("<div class='section-title'>🚀 Datos del pedido</div>", unsafe_allow_html=True)
 customer_name = st.text_input("📝 Nombre Completo")
 customer_phone = st.text_input("📞 Teléfono")
-customer_payment = st.text_input("🧾 Ultimos 6 digitos del pago")
 customer_address = st.text_area("📍 Dirección")
+payment_reference = st.text_input("💳 Últimos 6 dígitos de referencia bancaria del pago")
+
 if st.button("Confirmar Pedido ✅"):
-    if customer_name and customer_phone and customer_address:
+    if customer_name and customer_phone and customer_address and payment_reference:
         st.session_state["order_id"] = generate_order_id()
         send_order_email(
             st.session_state["order_id"],
@@ -290,6 +292,11 @@ if st.button("Confirmar Pedido ✅"):
             customer_phone,
             customer_address
         )
-        st.success(f"¡Pedido enviado! Orden ID: {st.session_state['order_id']} 🚀. Por favor, compartir comprobante de pago al WhatsApp +58 0424-8943749 o al correo konussfactory@gmail.com. **⚠️ El pedido será enviado una vez que se confirme el pago.**")
+        st.success(
+    f"🎉 Tu pedido ha sido realizado exitosamente. Tu número de orden es {st.session_state['order_id']}. "
+    f"Por favor, comparte el comprobante de pago con el número de referencia **{payment_reference}** "
+    f"al Whatsapp +58 0424-8943749 o al e-mail konussfactory@gmail.com. ⚠️ El pedido será enviado una vez confirmado el pago. ⚠️"
+)
+
     else:
         st.error("⚠️ Por favor, completa todos los campos.")
