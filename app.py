@@ -218,6 +218,20 @@ header, footer {
 # Encabezado
 st.markdown("<h1 class='header'>🍕 Konuss -¡Ahora la pizza se come en cono!🎉</h1>", unsafe_allow_html=True)
 
+# Opciones de delivery
+st.markdown("<div class='section-title'>🚚 Delivery</div>", unsafe_allow_html=True)
+delivery_option = st.selectbox(
+    "Seleccione la ubicación para el delivery:",
+    ["Lechería (Gratis)", "Puerto La Cruz ($0.5)", "Barcelona ($2.0)"]
+)
+# Determinar el costo del delivery
+if delivery_option == "Puerto La Cruz ($0.5)":
+    st.session_state["delivery_cost"] = 0.5
+elif delivery_option == "Barcelona ($2.0)":
+    st.session_state["delivery_cost"] = 2.0
+else:
+    st.session_state["delivery_cost"] = 0.0
+
 # Sección Menú
 st.markdown("<div class='section-title'>📋 Menú</div>", unsafe_allow_html=True)
 for product in products:
@@ -231,18 +245,22 @@ for product in products:
             st.success(f"🎉 ¡{product['name']} añadido al carrito!")
 
 
-# Sección Carrito
+## Sección Carrito
 st.markdown("<div class='section-title'>🛒 Tu carrito</div>", unsafe_allow_html=True)
 if any(quantity > 0 for quantity in st.session_state["quantities"].values()):
-    st.session_state["total"] = 0
+    # Inicializa el total con el costo del delivery
+    st.session_state["total"] = st.session_state["delivery_cost"]
+    st.write(f"**Delivery: {delivery_option} - ${st.session_state['delivery_cost']:.2f}**")
+
     for product_name, quantity in st.session_state["quantities"].items():
         if quantity > 0:
             product = next((p for p in products if p["name"] == product_name), None)
             if product:
-                col1, col2, col3 = st.columns([2, 2, 1])
+                col1, col2, col3 = st.columns([2, 2, 1])  # Distribución en columnas
                 with col1:
                     st.write(f"**{product_name}** - ${product['price']:.2f} c/u")
                 with col2:
+                    # Permitir ajustar la cantidad de productos
                     new_quantity = st.number_input(
                         f"Cantidad ({product_name})",
                         min_value=0,
@@ -253,9 +271,11 @@ if any(quantity > 0 for quantity in st.session_state["quantities"].values()):
                     )
                     st.session_state["quantities"][product_name] = new_quantity
                 with col3:
+                    # Calcular el subtotal por producto
                     subtotal = product['price'] * new_quantity
                     st.session_state["total"] += subtotal
                     st.write(f"${subtotal:.2f}")
+    # Mostrar el total final
     st.write(f"### Total: ${st.session_state['total']:.2f} 💵")
 else:
     st.write("¡Tu carrito está vacío! 😢")
