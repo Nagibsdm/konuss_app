@@ -271,13 +271,14 @@ st.markdown("""
 3. **Efectivo/Tarjeta:**  
    - Contactar al WhatsApp: +58 0424-8943749 para confirmar el método de pago.  
 
-**Nota: La orden se procesará una vez que el pago sea confirmado.**
+**⚠️Nota: La orden sera procesada una vez el pago haya sido confirmado ⚠️**
 """)
 
 # Sección Datos del Cliente
 st.markdown("<div class='section-title'>🚀 Datos del pedido</div>", unsafe_allow_html=True)
 customer_name = st.text_input("📝 Nombre Completo")
 customer_phone = st.text_input("📞 Teléfono")
+customer_payment = st.text_input("🧾 Ultimos 6 digitos del pago")
 customer_address = st.text_area("📍 Dirección")
 if st.button("Confirmar Pedido ✅"):
     if customer_name and customer_phone and customer_address:
